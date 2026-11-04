@@ -1,0 +1,871 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <script>
+        if (window.location.hostname.startsWith('app.')) {
+            document.documentElement.style.display = 'none';
+        }
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Undangan Digital</title>
+    <meta name="description"
+        content="Platform pembuatan dan penyedia undangan pernikahan digital elegan dengan pilihan tema, musik, RSVP, dan panel admin.">
+    <meta property="og:title" content="Undangan Digital">
+    <meta property="og:description"
+        content="Platform pembuatan dan penyedia undangan pernikahan digital elegan dengan pilihan tema, musik, RSVP, dan panel admin.">
+    <link rel="icon" type="image/svg+xml"
+        href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cpath fill='%23b8860b' d='M512 128l-81 126L311 96l-55 80-55-80L80 254l-80-126v256h512V128z'/%3E%3C/svg%3E">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Great+Vibes&family=Inter:wght@300;400;600;700&family=Parisienne&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="/landing/landing.css">
+</head>
+
+<body>
+
+    <!-- Particles -->
+    <div id="particles-js" style="position:fixed;width:100%;height:100%;top:0;left:0;z-index:0;pointer-events:none;">
+    </div>
+
+    <!-- NAVBAR -->
+    <nav class="lp-navbar" id="lp-navbar">
+        <a href="/" class="brand" id="navbar-brand">SEJOLI</a>
+        <div class="nav-actions">
+            <a href="#katalog" class="btn-nav btn-nav-outline" style="display:none;" id="nav-katalog-btn">Katalog</a>
+            <a href="/login/" class="btn-nav btn-nav-outline"><i class="fas fa-sign-in-alt"></i> Masuk</a>
+        </div>
+    </nav>
+
+    <!-- ====== HERO ====== -->
+    <section class="lp-hero" id="hero">
+        <div data-aos="fade-up" data-aos-duration="1200" style="position:relative;z-index:2;">
+            <div class="hero-badge">
+                <i class="fas fa-crown"></i> Premium Wedding Service
+            </div>
+            <h1 class="hero-title" id="landing-brand-title">SEJOLI</h1>
+            <p class="hero-subtitle">
+                Wujudkan undangan pernikahan digital yang elegan, modern, dan berkesan — dalam hitungan menit.
+            </p>
+            <div class="hero-cta-group">
+                <a href="#katalog" class="btn-cta btn-cta-primary">
+                    <i class="fas fa-palette"></i> Lihat Koleksi Tema
+                </a>
+                <a href="#cara-kerja" class="btn-cta btn-cta-ghost">
+                    <i class="fas fa-play-circle"></i> Cara Kerjanya
+                </a>
+            </div>
+            <div class="hero-stats" data-aos="fade-up" data-aos-delay="300">
+                <div class="hero-stat">
+                    <span class="number" id="stat-clients">500+</span>
+                    <span class="label">Undangan Dibuat</span>
+                </div>
+                <div class="hero-stat">
+                    <span class="number">9</span>
+                    <span class="label">Pilihan Tema</span>
+                </div>
+                <div class="hero-stat">
+                    <span class="number">24jam</span>
+                    <span class="label">Proses Cepat</span>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <span>Scroll</span>
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </section>
+
+    <!-- ====== FEATURES ====== -->
+    <section class="lp-section" id="fitur">
+        <div class="section-header" data-aos="fade-up">
+            <p class="section-label">Fitur Unggulan</p>
+            <h2 class="section-title">Semua yang Anda Butuhkan</h2>
+            <p class="section-desc">Setiap undangan dilengkapi fitur lengkap untuk pengalaman tamu yang tak terlupakan.
+            </p>
+        </div>
+        <div class="features-grid">
+            <div class="feature-card" data-aos="fade-up" data-aos-delay="0">
+                <div class="feature-icon"><i class="fas fa-check-circle"></i></div>
+                <h3>RSVP Digital</h3>
+                <p>Konfirmasi kehadiran tamu secara otomatis tanpa ribet.</p>
+            </div>
+            <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="feature-icon"><i class="fas fa-music"></i></div>
+                <h3>Musik Latar</h3>
+                <p>Tambahkan lagu romantis favorit sebagai pengiring undangan.</p>
+            </div>
+            <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="feature-icon"><i class="fas fa-images"></i></div>
+                <h3>Galeri Foto</h3>
+                <p>Tampilkan momen terbaik dalam galeri foto yang elegan.</p>
+            </div>
+            <div class="feature-card" data-aos="fade-up" data-aos-delay="300">
+                <div class="feature-icon"><i class="fas fa-heart"></i></div>
+                <h3>Love Story</h3>
+                <p>Ceritakan perjalanan cinta Anda dengan timeline interaktif.</p>
+            </div>
+            <div class="feature-card" data-aos="fade-up" data-aos-delay="400">
+                <div class="feature-icon"><i class="fas fa-gift"></i></div>
+                <h3>Amplop Digital</h3>
+                <p>Terima hadiah & transfer langsung dari tamu undangan.</p>
+            </div>
+            <div class="feature-card" data-aos="fade-up" data-aos-delay="500">
+                <div class="feature-icon"><i class="fas fa-globe"></i></div>
+                <h3>Custom Domain</h3>
+                <p>URL undangan eksklusif dengan nama mempelai sendiri.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====== KATALOG TEMA ====== -->
+    <section class="lp-section" id="katalog">
+        <div class="section-header" data-aos="fade-up">
+            <p class="section-label">Koleksi Tema</p>
+            <h2 class="section-title">Pilih Desain Impian Anda</h2>
+            <p class="section-desc">Setiap tema dirancang dengan detail tinggi untuk mencerminkan keindahan hari bahagia
+                Anda.</p>
+        </div>
+        <div class="themes-grid" id="theme-grid-container">
+
+            <!-- Royal Gold -->
+            <div class="theme-card" data-aos="fade-up" data-aos-delay="0">
+                <div class="theme-preview theme-preview-royal">
+                    <span class="theme-badge theme-badge-royal"><i class="fas fa-crown"></i> Royal Gold</span>
+                    <div class="phone-mockup">
+                        <div class="phone-notch"></div>
+                        <div class="phone-screen" style="background: radial-gradient(circle at center, #2d1e12 0%, #150d06 100%); padding: 14px 6px 10px; display: flex; flex-direction: column; align-items: center; justify-content: space-between; border: 1px solid rgba(184, 134, 11, 0.4); text-align: center; position: relative;">
+                            <!-- Frame Container with Gold Glow -->
+                            <div style="width: 58px; height: 58px; border: 2px solid #dfba55; border-radius: 8px; overflow: hidden; box-shadow: 0 0 14px rgba(223, 186, 85, 0.45); margin: 2px auto 0; position: relative; flex-shrink: 0;">
+                                <img src="https://i.ibb.co.com/DHc2VzZz/gallery2.jpg" alt="Couple" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+                            </div>
+                            <!-- Mini Couple Names in Cinzel Decorative -->
+                            <div style="font-family: 'Cinzel Decorative', cursive; font-size: 0.72rem; color: #dfba55; font-weight: 700; margin-top: 3px; line-height: 1.1; text-shadow: 0 2px 6px rgba(0,0,0,0.8);">Ozy &amp; Zelda</div>
+                            <!-- Recipient & Invitation Text -->
+                            <div style="margin: 2px 0;">
+                                <div style="font-size: 0.28rem; letter-spacing: 0.8px; color: #dfba55; text-transform: uppercase; font-family: 'Inter', sans-serif; font-weight: 600;">KEPADA YTH,</div>
+                                <div style="font-size: 0.5rem; font-weight: 600; color: #ffffff; font-family: 'Inter', sans-serif; margin: 1px 0;">Tamu Undangan</div>
+                                <div style="font-size: 0.23rem; color: #c4b5a5; font-style: italic; line-height: 1.1;">Kami mengundang Anda ke acara pernikahan kami.</div>
+                            </div>
+                            <!-- Gold Capsule Button -->
+                            <div style="background: linear-gradient(135deg, #dfba55, #b8860b); color: #1a1008; font-size: 0.4rem; font-weight: 700; padding: 3.5px 10px; border-radius: 99px; text-transform: uppercase; letter-spacing: 0.6px; display: inline-flex; align-items: center; justify-content: center; gap: 3px; box-shadow: 0 3px 10px rgba(184, 134, 11, 0.45);">
+                                <i class="fas fa-envelope-open" style="font-size: 0.34rem;"></i>
+                                <span>Buka Undangan</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="theme-info">
+                    <h3 class="theme-name" style="color:#b8860b;">Royal Gold</h3>
+                    <div class="theme-price-wrapper" data-theme-id="royal-gold" style="display:none;"></div>
+                    <p class="theme-desc">Desain mewah dengan nuansa emas klasik yang memancarkan kesan elegan dan timeless.</p>
+                    <div class="theme-actions">
+                        <a href="/themes/v1/index.html?u=demo" class="btn-theme btn-theme-demo"><i class="fas fa-eye"></i> Demo</a>
+                        <button class="btn-theme btn-theme-order btn-open-order" data-theme-name="Royal Gold"><i class="fab fa-whatsapp"></i> Pesan</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Floral Light -->
+            <div class="theme-card" data-aos="fade-up" data-aos-delay="150">
+                <div class="theme-preview theme-preview-floral">
+                    <span class="theme-badge theme-badge-floral"><i class="fas fa-leaf"></i> Floral Light</span>
+                    <div class="phone-mockup">
+                        <div class="phone-notch"></div>
+                        <div class="phone-screen" style="background: radial-gradient(circle at center, #ffffff 0%, #f7efe6 100%); padding: 14px 6px 10px; display: flex; flex-direction: column; align-items: center; justify-content: space-between; border: 1px solid rgba(212, 163, 115, 0.45); text-align: center; position: relative;">
+                            <!-- Frame Container with Warm Terracotta Border -->
+                            <div style="width: 58px; height: 58px; border: 2px solid #8b5e3c; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 12px rgba(139, 94, 60, 0.2); margin: 2px auto 0; position: relative; flex-shrink: 0;">
+                                <img src="https://i.ibb.co.com/DHc2VzZz/gallery2.jpg" alt="Couple" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+                            </div>
+                            <!-- Mini Couple Names in Cinzel Decorative -->
+                            <div style="font-family: 'Cinzel Decorative', cursive; font-size: 0.72rem; color: #8b5e3c; font-weight: 700; margin-top: 3px; line-height: 1.1;">Ozy &amp; Zelda</div>
+                            <!-- Recipient & Invitation Text -->
+                            <div style="margin: 2px 0;">
+                                <div style="font-size: 0.28rem; letter-spacing: 0.8px; color: #8b5e3c; text-transform: uppercase; font-family: 'Inter', sans-serif; font-weight: 600;">KEPADA YTH,</div>
+                                <div style="font-size: 0.5rem; font-weight: 600; color: #3d2b1f; font-family: 'Inter', sans-serif; margin: 1px 0;">Tamu Undangan</div>
+                                <div style="font-size: 0.23rem; color: #7a6352; font-style: italic; line-height: 1.1;">Kami mengundang Anda ke acara pernikahan kami.</div>
+                            </div>
+                            <!-- Floral Warm Terracotta Capsule Button -->
+                            <div style="background: linear-gradient(135deg, #a97142, #8b5e3c); color: #ffffff; font-size: 0.4rem; font-weight: 700; padding: 3.5px 10px; border-radius: 99px; text-transform: uppercase; letter-spacing: 0.6px; display: inline-flex; align-items: center; justify-content: center; gap: 3px; box-shadow: 0 3px 10px rgba(139, 94, 60, 0.25);">
+                                <i class="fas fa-envelope-open" style="font-size: 0.34rem;"></i>
+                                <span>Buka Undangan</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="theme-info">
+                    <h3 class="theme-name" style="color:#d4a373;">Floral Light</h3>
+                    <div class="theme-price-wrapper" data-theme-id="floral-light" style="display:none;"></div>
+                    <p class="theme-desc">Nuansa hangat dengan sentuhan floral dan palet warna lembut yang romantis.</p>
+                    <div class="theme-actions">
+                        <a href="/themes/v1/index.html?u=demo2" class="btn-theme btn-theme-demo"><i class="fas fa-eye"></i> Demo</a>
+                        <button class="btn-theme btn-theme-order btn-open-order" data-theme-name="Floral Light"><i class="fab fa-whatsapp"></i> Pesan</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Midnight Dark -->
+            <div class="theme-card" data-aos="fade-up" data-aos-delay="300">
+                <div class="theme-preview theme-preview-midnight">
+                    <span class="theme-badge theme-badge-midnight"><i class="fas fa-moon"></i> Midnight Dark</span>
+                    <div class="phone-mockup">
+                        <div class="phone-notch"></div>
+                        <div class="phone-screen" style="background: radial-gradient(circle at center, #0e1e38 0%, #050a14 100%); padding: 14px 6px 10px; display: flex; flex-direction: column; align-items: center; justify-content: space-between; border: 1px solid rgba(0, 212, 255, 0.35); text-align: center; position: relative;">
+                            <!-- Frame Container with Neon Cyan Border -->
+                            <div style="width: 58px; height: 58px; border: 2px solid #00d4ff; border-radius: 8px; overflow: hidden; box-shadow: 0 0 14px rgba(0, 212, 255, 0.45); margin: 2px auto 0; position: relative; flex-shrink: 0;">
+                                <img src="https://i.ibb.co.com/DHc2VzZz/gallery2.jpg" alt="Couple" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+                            </div>
+                            <!-- Mini Couple Names in Cinzel Decorative -->
+                            <div style="font-family: 'Cinzel Decorative', cursive; font-size: 0.72rem; color: #00d4ff; font-weight: 700; margin-top: 3px; line-height: 1.1; text-shadow: 0 0 8px rgba(0, 212, 255, 0.5);">Ozy &amp; Zelda</div>
+                            <!-- Recipient & Invitation Text -->
+                            <div style="margin: 2px 0;">
+                                <div style="font-size: 0.28rem; letter-spacing: 0.8px; color: #38bdf8; text-transform: uppercase; font-family: 'Inter', sans-serif; font-weight: 600;">KEPADA YTH,</div>
+                                <div style="font-size: 0.5rem; font-weight: 600; color: #ffffff; font-family: 'Inter', sans-serif; margin: 1px 0;">Tamu Undangan</div>
+                                <div style="font-size: 0.23rem; color: #94a3b8; font-style: italic; line-height: 1.1;">Kami mengundang Anda ke acara pernikahan kami.</div>
+                            </div>
+                            <!-- Midnight Cyan Capsule Button -->
+                            <div style="background: linear-gradient(135deg, #00d4ff, #00838f); color: #050a14; font-size: 0.4rem; font-weight: 800; padding: 3.5px 10px; border-radius: 99px; text-transform: uppercase; letter-spacing: 0.6px; display: inline-flex; align-items: center; justify-content: center; gap: 3px; box-shadow: 0 3px 12px rgba(0, 212, 255, 0.45);">
+                                <i class="fas fa-envelope-open" style="font-size: 0.34rem;"></i>
+                                <span>Buka Undangan</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="theme-info">
+                    <h3 class="theme-name" style="color:#3a8fb7;">Midnight Dark</h3>
+                    <div class="theme-price-wrapper" data-theme-id="midnight-dark" style="display:none;"></div>
+                    <p class="theme-desc">Tampilan modern dan sleek dengan nuansa gelap biru yang sophisticated.</p>
+                    <div class="theme-actions">
+                        <a href="/themes/v1/index.html?u=demo3" class="btn-theme btn-theme-demo"><i class="fas fa-eye"></i> Demo</a>
+                        <button class="btn-theme btn-theme-order btn-open-order" data-theme-name="Midnight Dark"><i class="fab fa-whatsapp"></i> Pesan</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Heritage Series -->
+            <div class="theme-card" data-aos="fade-up" data-aos-delay="450">
+                <div class="theme-preview theme-preview-heritage">
+                    <span class="theme-badge theme-badge-heritage"><i class="fas fa-landmark"></i> Heritage Classic</span>
+                    <div class="phone-mockup">
+                        <div class="phone-notch"></div>
+                        <div class="phone-screen" style="background: radial-gradient(circle at center, #2C2A29 0%, #171413 100%); padding: 14px 6px 10px; display: flex; flex-direction: column; align-items: center; justify-content: space-between; border: 1px solid rgba(179, 139, 77, 0.45); text-align: center; position: relative;">
+                            <!-- Header Subtitle -->
+                            <div style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 0.32rem; letter-spacing: 2px; color: #dfba79; font-weight: 600; text-transform: uppercase; line-height: 1.1; margin-top: 2px;">THE WEDDING OF</div>
+                            <!-- Couple Name & Quote -->
+                            <div style="margin: 2px 0;">
+                                <div style="font-family: 'Great Vibes', cursive; font-size: 1.35rem; color: #fdfbf7; line-height: 1.05; text-shadow: 0 2px 8px rgba(0,0,0,0.7);">Rama &amp; Shinta</div>
+                                <div style="font-family: 'Playfair Display', serif; font-size: 0.25rem; font-style: italic; color: #d0c0a8; max-width: 102px; margin: 2px auto 0; line-height: 1.2;">"Sebuah ikatan suci dalam doa &amp; restu."</div>
+                            </div>
+                            <!-- Inset Recipient Box with Pill Badge -->
+                            <div style="margin-bottom: 4px;">
+                                <div style="font-size: 0.26rem; color: #a89f91; font-family: 'Plus Jakarta Sans', sans-serif; margin-bottom: 1.5px;">Kepada Yth.</div>
+                                <div style="display: inline-block; background: rgba(179, 139, 77, 0.25); border: 0.6px solid rgba(179, 139, 77, 0.5); padding: 1.5px 8px; border-radius: 99px; font-family: 'Playfair Display', serif; font-size: 0.46rem; font-weight: 600; color: #ffffff;">Tamu Undangan</div>
+                                <div style="font-size: 0.2rem; color: #9c8e7e; font-style: italic; margin-top: 1.5px;">*Mohon maaf bila ada salah penulisan</div>
+                            </div>
+                            <!-- Heritage Gold Capsule Button -->
+                            <div style="background: linear-gradient(135deg, #dfba79, #9c7333); color: #1c1713; font-size: 0.4rem; font-weight: 700; padding: 3.5px 10px; border-radius: 99px; text-transform: uppercase; letter-spacing: 0.6px; display: inline-flex; align-items: center; justify-content: center; gap: 3px; box-shadow: 0 3px 10px rgba(179, 139, 77, 0.4);">
+                                <i class="fas fa-envelope-open-text" style="font-size: 0.34rem;"></i>
+                                <span>Buka Undangan</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="theme-info">
+                    <h3 class="theme-name" style="color:#B38B4D;">Heritage Series</h3>
+                    <div class="theme-price-wrapper" data-theme-id="heritage-series" style="display:none;"></div>
+                    <p class="theme-desc">Perpaduan estetika klasik Jawa & batik modern bernuansa cokelat emas hangat yang sakral dan berwibawa.</p>
+                    <div class="theme-actions">
+                        <a href="/themes/heritage-series/index.html?u=demo" class="btn-theme btn-theme-demo"><i class="fas fa-eye"></i> Demo</a>
+                        <button class="btn-theme btn-theme-order btn-open-order" data-theme-name="Heritage Series"><i class="fab fa-whatsapp"></i> Pesan</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Velvet Champagne -->
+            <div class="theme-card" data-aos="fade-up" data-aos-delay="600">
+                <div class="theme-preview theme-preview-velvet">
+                    <span class="theme-badge theme-badge-velvet"><i class="fas fa-gem"></i> Luxury Glamour</span>
+                    <div class="phone-mockup">
+                        <div class="phone-notch"></div>
+                        <div class="phone-screen" style="background: radial-gradient(circle at center, #0f1c38 0%, #040711 100%); padding: 8px 6px; display: flex; align-items: center; justify-content: center; position: relative; border: 1px solid rgba(212, 175, 55, 0.4); text-align: center;">
+                            <!-- Outer Luxury Frame with Corner Gems -->
+                            <div style="position: relative; width: 100%; height: 100%; border: 0.6px solid rgba(212, 175, 55, 0.35); border-radius: 6px; padding: 8px 4px 6px; display: flex; flex-direction: column; justify-content: space-between; align-items: center;">
+                                <!-- Corner Gems -->
+                                <i class="fas fa-gem" style="position: absolute; top: -3px; left: -3px; font-size: 0.3rem; color: #dfba55;"></i>
+                                <i class="fas fa-gem" style="position: absolute; top: -3px; right: -3px; font-size: 0.3rem; color: #dfba55;"></i>
+                                <i class="fas fa-gem" style="position: absolute; bottom: -3px; left: -3px; font-size: 0.3rem; color: #dfba55;"></i>
+                                <i class="fas fa-gem" style="position: absolute; bottom: -3px; right: -3px; font-size: 0.3rem; color: #dfba55;"></i>
+
+                                <!-- Subtitle -->
+                                <div>
+                                    <div style="font-family: 'Playfair Display', serif; font-size: 0.28rem; letter-spacing: 1.2px; color: #ecd599; font-weight: 600; text-transform: uppercase;">THE WEDDING CELEBRATION OF</div>
+                                    <div style="width: 16px; height: 0.5px; background: linear-gradient(to right, transparent, #dfba55, transparent); margin: 2px auto 0;"></div>
+                                </div>
+
+                                <!-- Couple Name & Date -->
+                                <div style="width: 100%; overflow: visible;">
+                                    <div style="font-family: 'Great Vibes', cursive; font-size: 1.35rem; color: #fdf5df; line-height: 1.25; padding: 2px 0; text-shadow: 0 3px 8px rgba(212, 175, 55, 0.45); overflow: visible;">Ozy &amp; Zelda</div>
+                                    <div style="font-size: 0.3rem; color: #ecd599; font-family: 'Playfair Display', serif; letter-spacing: 0.8px; text-transform: uppercase; margin-top: 1px;">SABTU, 24 OKTOBER 2026</div>
+                                </div>
+
+                                <!-- Frosted Glass Guest Card -->
+                                <div style="background: rgba(20, 38, 75, 0.65); backdrop-filter: blur(4px); border: 0.5px solid rgba(212, 175, 55, 0.45); border-radius: 4px; padding: 3px 4px; width: 100%; box-shadow: 0 3px 10px rgba(0,0,0,0.5);">
+                                    <div style="font-size: 0.22rem; color: #a8b2c4; text-transform: uppercase; letter-spacing: 0.4px;">KEPADA YTH. BAPAK/IBU/SAUDARA/I:</div>
+                                    <div style="font-size: 0.46rem; font-weight: 700; color: #fdf5df; margin: 1px 0; font-family: 'Playfair Display', serif;">Tamu Undangan</div>
+                                    <div style="font-size: 0.2rem; color: #94a3b8; font-style: italic; line-height: 1.1;">Mohon maaf bila ada kesalahan penulisan</div>
+                                </div>
+
+                                <!-- Gold Button -->
+                                <div style="background: linear-gradient(135deg, #dfba55, #c49925); color: #040711; font-size: 0.36rem; font-weight: 700; padding: 3.5px 8px; border-radius: 99px; text-transform: uppercase; letter-spacing: 0.6px; display: inline-flex; align-items: center; justify-content: center; gap: 3px; box-shadow: 0 0 10px rgba(212, 175, 55, 0.4); width: 85%;">
+                                    <i class="fas fa-envelope-open" style="font-size: 0.32rem;"></i>
+                                    <span>Buka Undangan</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="theme-info">
+                    <h3 class="theme-name" style="color:#d4af37;">Velvet Champagne</h3>
+                    <div class="theme-price-wrapper" data-theme-id="velvet-champagne" style="display:none;"></div>
+                    <p class="theme-desc">Kemewahan royal glamour dengan latar velvet gelap, kilau emas champagne, bintang malam, dan tipografi eksklusif.</p>
+                    <div class="theme-actions">
+                        <a href="/themes/velvet-champagne/index.html?u=demo" class="btn-theme btn-theme-demo"><i class="fas fa-eye"></i> Demo</a>
+                        <button class="btn-theme btn-theme-order btn-open-order" data-theme-name="Velvet Champagne"><i class="fab fa-whatsapp"></i> Pesan</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Nordic Minimalist -->
+            <div class="theme-card" data-aos="fade-up" data-aos-delay="750">
+                <div class="theme-preview theme-preview-nordic">
+                    <span class="theme-badge theme-badge-nordic"><i class="fas fa-feather-pointed"></i> Clean &amp; Elegant</span>
+                    <div class="phone-mockup">
+                        <div class="phone-notch"></div>
+                        <div class="phone-screen" style="background: #f4f4f2; padding: 12px 6px 10px; display: flex; align-items: center; justify-content: center; position: relative;">
+                            <!-- Floating White Nordic Card with Shadow & Frame Corners -->
+                            <div style="background: #ffffff; width: 100%; border-radius: 3px; padding: 11px 6px 8px; text-align: center; position: relative; box-shadow: 0 8px 20px -3px rgba(0,0,0,0.08), 0 2px 6px -1px rgba(0,0,0,0.04); border: 1px solid rgba(228, 228, 231, 0.75);">
+                                <!-- 4 Corner Accent Brackets -->
+                                <span style="position: absolute; top: 3px; left: 3px; width: 5px; height: 5px; border-top: 1px solid #71717a; border-left: 1px solid #71717a;"></span>
+                                <span style="position: absolute; top: 3px; right: 3px; width: 5px; height: 5px; border-top: 1px solid #71717a; border-right: 1px solid #71717a;"></span>
+                                <span style="position: absolute; bottom: 3px; left: 3px; width: 5px; height: 5px; border-bottom: 1px solid #71717a; border-left: 1px solid #71717a;"></span>
+                                <span style="position: absolute; bottom: 3px; right: 3px; width: 5px; height: 5px; border-bottom: 1px solid #71717a; border-right: 1px solid #71717a;"></span>
+
+                                <!-- Subtitle Header with Underline -->
+                                <div style="font-size: 0.33rem; letter-spacing: 1.2px; color: #3f3f46; text-transform: uppercase; font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 600; line-height: 1.1;">
+                                    THE WEDDING CELEBRATION OF
+                                </div>
+                                <div style="width: 14px; height: 0.5px; background: #a1a1aa; margin: 2px auto 4px;"></div>
+
+                                <!-- Couple Names (Script Calligraphy Stacked) -->
+                                <div style="margin: 2px 0 3px;">
+                                    <div style="font-family: 'Parisienne', cursive; font-size: 1.15rem; color: #18181b; line-height: 0.95;">Soren</div>
+                                    <div style="font-family: 'Parisienne', cursive; font-size: 0.65rem; color: #71717a; line-height: 0.9; margin: 1px 0;">&amp;</div>
+                                    <div style="font-family: 'Parisienne', cursive; font-size: 1.15rem; color: #18181b; line-height: 0.95;">Freya</div>
+                                </div>
+
+                                <!-- Date -->
+                                <div style="font-size: 0.36rem; color: #3f3f46; font-family: 'Plus Jakarta Sans', sans-serif; letter-spacing: 1px; font-weight: 500; margin-bottom: 5px;">
+                                    SABTU, 24 OKTOBER 2026
+                                </div>
+
+                                <!-- Inset Recipient Box -->
+                                <div style="background: rgba(250, 250, 249, 0.9); border: 0.5px solid rgba(228, 228, 231, 0.85); border-radius: 2px; padding: 3px 4px; margin-bottom: 6px;">
+                                    <div style="font-size: 0.28rem; letter-spacing: 0.5px; color: #71717a; text-transform: uppercase; font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 600;">KEPADA YTH. BAPAK/IBU/SAUDARA/I</div>
+                                    <div style="font-size: 0.48rem; font-weight: 700; color: #18181b; margin: 1px 0; font-family: 'Plus Jakarta Sans', sans-serif;">Tamu Undangan</div>
+                                    <div style="font-size: 0.24rem; color: #a1a1aa; font-style: italic; line-height: 1.1;">Tanpa mengurangi rasa hormat, kami mengundang Anda untuk hadir.</div>
+                                </div>
+
+                                <!-- Black Rectangle Button with Envelope Icon -->
+                                <div style="background: #18181b; color: #ffffff; font-size: 0.4rem; font-weight: 700; padding: 4px 8px; border-radius: 2px; text-transform: uppercase; letter-spacing: 0.6px; display: inline-flex; align-items: center; justify-content: center; gap: 4px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);">
+                                    <span>BUKA UNDANGAN</span>
+                                    <i class="fas fa-envelope" style="font-size: 0.36rem;"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="theme-info">
+                    <h3 class="theme-name" style="color:#f4f4f5; font-weight:700;">Nordic Minimalist</h3>
+                    <div class="theme-price-wrapper" data-theme-id="nordic-minimalist" style="display:none;"></div>
+                    <p class="theme-desc">Keanggunan Skandinavia yang bersih, tenang, dan abadi dengan sentuhan frosted glassmorphism modern.</p>
+                    <div class="theme-actions">
+                        <a href="/themes/nordic-minimalist/index.html?u=demo" class="btn-theme btn-theme-demo"><i class="fas fa-eye"></i> Demo</a>
+                        <button class="btn-theme btn-theme-order btn-open-order" data-theme-name="Nordic Minimalist"><i class="fab fa-whatsapp"></i> Pesan</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Royal Emerald & Gold -->
+            <div class="theme-card" data-aos="fade-up" data-aos-delay="900">
+                <div class="theme-preview theme-preview-emerald">
+                    <span class="theme-badge theme-badge-emerald"><i class="fas fa-gem"></i> Royal Emerald</span>
+                    <div class="phone-mockup">
+                        <div class="phone-notch"></div>
+                        <div class="phone-screen" style="background: radial-gradient(circle at center, #062c22 0%, #031a14 100%); padding: 12px 6px 10px; display: flex; flex-direction: column; align-items: center; justify-content: space-between; border: 1px solid rgba(223, 190, 126, 0.4); text-align: center; position: relative;">
+                            <!-- Concentric Circular Photo Frame with Gold Glow -->
+                            <div style="position: relative; width: 56px; height: 56px; margin: 2px auto 0; flex-shrink: 0; display: flex; align-items: center; justify-content: center;">
+                                <div style="position: absolute; inset: 0; border-radius: 9999px; border: 1.5px dashed #dfbe7e;"></div>
+                                <div style="width: 46px; height: 46px; border-radius: 9999px; overflow: hidden; border: 1.5px solid #ffffff; box-shadow: 0 0 12px rgba(223, 190, 126, 0.5);">
+                                    <img src="https://images.unsplash.com/photo-1583939003579-730e3918a45a?auto=format&fit=crop&w=400&q=80" alt="Couple" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+                                </div>
+                            </div>
+
+                            <!-- Header Subtitle & Couple Name -->
+                            <div style="margin: 2px 0;">
+                                <div style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 0.28rem; letter-spacing: 1.5px; color: #eed18a; text-transform: uppercase; font-weight: 600;">WALIMATUL 'URSY</div>
+                                <div style="font-family: 'Playfair Display', serif; font-size: 0.72rem; color: #fae3ad; font-weight: 700; line-height: 1.1; margin-top: 1px;">
+                                    Soren <span style="font-family: 'Pinyon Script', cursive; font-size: 0.68rem; color: #dfbe7e;">&amp;</span> Freya
+                                </div>
+                            </div>
+
+                            <!-- Frosted Recipient Box -->
+                            <div style="background: rgba(3, 26, 20, 0.75); border: 0.5px solid rgba(223, 190, 126, 0.35); border-radius: 6px; padding: 3px 5px; width: 100%; box-shadow: 0 4px 12px rgba(0,0,0,0.4);">
+                                <div style="font-size: 0.22rem; letter-spacing: 0.6px; color: #fae3ad; text-transform: uppercase; font-family: 'Plus Jakarta Sans', sans-serif;">KEPADA YTH:</div>
+                                <div style="font-size: 0.46rem; font-weight: 700; color: #ffffff; font-family: 'Playfair Display', serif; margin: 1px 0;">Tamu Undangan</div>
+                                <div style="font-size: 0.2rem; color: #dfbe7e; font-style: italic; line-height: 1.1;">Sabtu, 12 Desember 2026</div>
+                            </div>
+
+                            <!-- Gold Capsule Button -->
+                            <div style="background: linear-gradient(135deg, #dfbe7e, #b38738); color: #031a14; font-size: 0.38rem; font-weight: 800; padding: 3.5px 10px; border-radius: 99px; text-transform: uppercase; letter-spacing: 0.6px; display: inline-flex; align-items: center; justify-content: center; gap: 3px; box-shadow: 0 3px 12px rgba(223, 190, 126, 0.45); width: 85%;">
+                                <i class="fas fa-envelope-open-text" style="font-size: 0.34rem;"></i>
+                                <span>Buka Undangan</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="theme-info">
+                    <h3 class="theme-name" style="color:#dfbe7e;">Royal Emerald &amp; Gold</h3>
+                    <div class="theme-price-wrapper" data-theme-id="royal-emerald" style="display:none;"></div>
+                    <p class="theme-desc">Kemewahan royal nan sakral berpadu keagungan hijau zamrud, aksen emas berkilau, ornamen botani bangsawan, dan kaligrafi suci.</p>
+                    <div class="theme-actions">
+                        <a href="/themes/royal-emerald/index.html?u=demo" class="btn-theme btn-theme-demo"><i class="fas fa-eye"></i> Demo</a>
+                        <button class="btn-theme btn-theme-order btn-open-order" data-theme-name="Royal Emerald &amp; Gold"><i class="fab fa-whatsapp"></i> Pesan</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Golden Sunset -->
+            <div class="theme-card" data-aos="fade-up" data-aos-delay="1050">
+                <div class="theme-preview theme-preview-golden-sunset">
+                    <span class="theme-badge theme-badge-golden-sunset"><i class="fas fa-sun"></i> Golden Sunset</span>
+                    <div class="phone-mockup">
+                        <div class="phone-notch"></div>
+                        <div class="phone-screen" style="background: radial-gradient(circle at center, #F4ECE1 0%, #FAF5EE 100%); padding: 12px 6px 10px; display: flex; flex-direction: column; align-items: center; justify-content: space-between; border: 1px solid rgba(217, 161, 67, 0.4); text-align: center; position: relative;">
+                            <!-- Circular Couple Photo with Amber Gold Frame -->
+                            <div style="position: relative; width: 56px; height: 56px; margin: 2px auto 0; flex-shrink: 0; border: 1.5px solid #D9A143; border-radius: 999px; overflow: hidden; box-shadow: 0 0 12px rgba(217, 161, 67, 0.4);">
+                                <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=400&q=80" alt="Couple" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+                            </div>
+
+                            <!-- Header Subtitle & Couple Name -->
+                            <div style="margin: 2px 0;">
+                                <div style="font-family: 'Raleway', sans-serif; font-size: 0.28rem; letter-spacing: 1.5px; color: #7E4515; text-transform: uppercase; font-weight: 700;">THE WEDDING OF</div>
+                                <div style="font-family: 'Great Vibes', cursive; font-size: 0.85rem; color: #A4631B; font-weight: 700; line-height: 1.1; margin-top: 1px;">
+                                    Soren &amp; Freya
+                                </div>
+                            </div>
+
+                            <!-- Sand Beige Recipient Card -->
+                            <div style="background: rgba(254, 248, 239, 0.85); border: 0.5px solid rgba(217, 161, 67, 0.4); border-radius: 6px; padding: 3px 5px; width: 100%; box-shadow: 0 4px 12px rgba(126, 69, 21, 0.08);">
+                                <div style="font-size: 0.22rem; letter-spacing: 0.6px; color: #7E4515; text-transform: uppercase; font-family: 'Raleway', sans-serif; font-weight: 600;">KEPADA YTH:</div>
+                                <div style="font-size: 0.46rem; font-weight: 700; color: #341A0B; font-family: 'Playfair Display', serif; margin: 1px 0;">Tamu Undangan</div>
+                                <div style="font-size: 0.2rem; color: #C78326; font-style: italic; line-height: 1.1;">Sabtu, 24 Oktober 2026</div>
+                            </div>
+
+                            <!-- Amber Gold Capsule Button -->
+                            <div style="background: linear-gradient(135deg, #E4BF72, #C78326); color: #341A0B; font-size: 0.38rem; font-weight: 800; padding: 3.5px 10px; border-radius: 99px; text-transform: uppercase; letter-spacing: 0.6px; display: inline-flex; align-items: center; justify-content: center; gap: 3px; box-shadow: 0 3px 12px rgba(217, 161, 67, 0.45); width: 85%;">
+                                <i class="fas fa-envelope-open-text" style="font-size: 0.34rem; color: #341A0B;"></i>
+                                <span>Buka Undangan</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="theme-info">
+                    <h3 class="theme-name" style="color:#C78326;">Golden Sunset</h3>
+                    <div class="theme-price-wrapper" data-theme-id="golden-sunset" style="display:none;"></div>
+                    <p class="theme-desc">Nuansa magis golden hour dan hangatnya cahaya senja berpadu aksen amber gold mewah, estetika pasir pantai sand beige, dan glassmorphism romantis.</p>
+                    <div class="theme-actions">
+                        <a href="/themes/golden-sunset/index.html?u=demo" class="btn-theme btn-theme-demo"><i class="fas fa-eye"></i> Demo</a>
+                        <button class="btn-theme btn-theme-order btn-open-order" data-theme-name="Golden Sunset"><i class="fab fa-whatsapp"></i> Pesan</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Minimalist Elegant -->
+            <div class="theme-card" data-aos="fade-up" data-aos-delay="1150">
+                <div class="theme-preview theme-preview-minimalist-elegant">
+                    <span class="theme-badge theme-badge-minimalist-elegant"><i class="fas fa-feather"></i> Minimalist Elegant</span>
+                    <div class="phone-mockup">
+                        <div class="phone-notch"></div>
+                        <div class="phone-screen" style="background: radial-gradient(circle at center, #26231f 0%, #141210 100%); padding: 12px 6px 10px; display: flex; flex-direction: column; align-items: center; justify-content: space-between; border: 1px solid rgba(215, 203, 182, 0.35); text-align: center; position: relative;">
+                            <!-- Circular Couple Photo with Champagne Gold Frame -->
+                            <div style="position: relative; width: 56px; height: 56px; margin: 2px auto 0; flex-shrink: 0; border: 1.5px solid #d7cbb6; border-radius: 999px; overflow: hidden; box-shadow: 0 0 12px rgba(215, 203, 182, 0.4);">
+                                <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=400&q=80" alt="Couple" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+                            </div>
+
+                            <!-- Header Subtitle & Couple Name -->
+                            <div style="margin: 2px 0;">
+                                <div style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 0.28rem; letter-spacing: 1.5px; color: #d7cbb6; text-transform: uppercase; font-weight: 500;">THE WEDDING CELEBRATION</div>
+                                <div style="font-family: 'Cormorant Garamond', serif; font-size: 0.85rem; font-style: italic; color: #faf9f6; font-weight: 400; line-height: 1.1; margin-top: 1px;">
+                                    Sorensen <span style="font-family: 'Plus Jakarta Sans', sans-serif; font-style: normal; font-size: 0.65rem; color: #d7cbb6;">&amp;</span> Freya
+                                </div>
+                            </div>
+
+                            <!-- Minimalist Champagne Recipient Card -->
+                            <div style="background: rgba(20, 18, 16, 0.85); border: 0.5px solid rgba(215, 203, 182, 0.35); border-radius: 6px; padding: 3px 5px; width: 100%; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);">
+                                <div style="font-size: 0.22rem; letter-spacing: 0.6px; color: #c2af91; text-transform: uppercase; font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 500;">KEPADA YTH:</div>
+                                <div style="font-size: 0.46rem; font-weight: 600; color: #faf9f6; font-family: 'Cormorant Garamond', serif; margin: 1px 0;">Tamu Undangan</div>
+                                <div style="font-size: 0.2rem; color: #aba293; font-style: italic; line-height: 1.1;">Sabtu, 24 Oktober 2026</div>
+                            </div>
+
+                            <!-- Champagne Gold Capsule Button -->
+                            <div style="background: linear-gradient(135deg, #f5f2ed, #d7cbb6); color: #141210; font-size: 0.38rem; font-weight: 700; padding: 3.5px 10px; border-radius: 99px; text-transform: uppercase; letter-spacing: 0.6px; display: inline-flex; align-items: center; justify-content: center; gap: 3px; box-shadow: 0 3px 12px rgba(215, 203, 182, 0.35); width: 85%;">
+                                <i class="fas fa-envelope-open-text" style="font-size: 0.34rem; color: #141210;"></i>
+                                <span>Buka Undangan</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="theme-info">
+                    <h3 class="theme-name" style="color:#d7cbb6;">Minimalist Elegant</h3>
+                    <div class="theme-price-wrapper" data-theme-id="minimalist-elegant" style="display:none;"></div>
+                    <p class="theme-desc">Keanggunan editorial modern bernuansa warna gelap, tipografi serif eksklusif, sentuhan emas champagne lembut, dan tata letak minimalis yang memikat.</p>
+                    <div class="theme-actions">
+                        <a href="/themes/minimalist-elegant/index.html?u=demo" class="btn-theme btn-theme-demo"><i class="fas fa-eye"></i> Demo</a>
+                        <button class="btn-theme btn-theme-order btn-open-order" data-theme-name="Minimalist Elegant"><i class="fab fa-whatsapp"></i> Pesan</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ====== CARA KERJA ====== -->
+    <section class="lp-section" id="cara-kerja">
+        <div class="section-header" data-aos="fade-up">
+            <p class="section-label">Cara Kerja</p>
+            <h2 class="section-title">3 Langkah Mudah</h2>
+            <p class="section-desc">Undangan digital Anda siap dalam waktu singkat tanpa proses yang rumit.</p>
+        </div>
+        <div class="steps-container">
+            <div class="step-card" data-aos="fade-up" data-aos-delay="0">
+                <div class="step-number">01</div>
+                <h3>Pilih Tema</h3>
+                <p>Pilih desain undangan yang paling mencerminkan gaya Anda dari koleksi kami.</p>
+            </div>
+            <div class="step-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="step-number">02</div>
+                <h3>Isi Data</h3>
+                <p>Masukkan informasi mempelai, acara, galeri foto, dan detail lainnya melalui panel editor.</p>
+            </div>
+            <div class="step-card" data-aos="fade-up" data-aos-delay="400">
+                <div class="step-number">03</div>
+                <h3>Bagikan</h3>
+                <p>Undangan Anda siap! Bagikan link eksklusif ke seluruh tamu via WhatsApp.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====== CTA FINAL ====== -->
+    <section class="lp-cta-section" id="cta-final">
+        <div data-aos="fade-up">
+            <h2 class="cta-title">Siap Membuat Undangan Impian?</h2>
+            <p class="cta-desc">Hubungi kami sekarang dan wujudkan undangan pernikahan digital yang tak terlupakan.</p>
+            <button class="btn-cta btn-cta-primary btn-open-order" data-theme-name="">
+                <i class="fab fa-whatsapp"></i> Pesan Sekarang
+            </button>
+        </div>
+    </section>
+
+    <!-- ORDER MODAL -->
+    <div class="order-modal-overlay" id="order-modal" style="display:none;">
+        <div class="order-modal">
+            <button class="order-modal-close" id="order-modal-close">&times;</button>
+            <div class="order-modal-header">
+                <h2>Form Pemesanan</h2>
+                <p>Lengkapi data di bawah untuk memesan tema ini.</p>
+            </div>
+            <form id="order-form">
+                <div class="order-field">
+                    <label>Nama Anda (Pria-Wanita) <span style="color:#e74c3c;">*</span></label>
+                    <input type="text" id="order-name" placeholder="Contoh: ozy-zelda" required pattern="^[a-zA-Z]+-[a-zA-Z]+$">
+                </div>
+                <div class="order-field">
+                    <label>Tema Undangan</label>
+                    <select id="order-theme-select" style="display: none;">
+                        <option value="royal-gold">Royal Gold</option>
+                        <option value="floral-light">Floral Light</option>
+                        <option value="midnight-dark">Midnight Dark</option>
+                        <option value="heritage-series">Heritage Series</option>
+                        <option value="velvet-champagne">Velvet Champagne</option>
+                        <option value="nordic-minimalist">Nordic Minimalist</option>
+                        <option value="royal-emerald">Royal Emerald & Gold</option>
+                        <option value="golden-sunset">Golden Sunset</option>
+                        <option value="minimalist-elegant">Minimalist Elegant</option>
+                    </select>
+                    <div class="custom-select" id="order-theme-custom-select">
+                        <div class="custom-select-trigger" data-value="royal-gold">
+                            <span>Royal Gold</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="custom-options">
+                            <div class="custom-option active" data-value="royal-gold">Royal Gold</div>
+                            <div class="custom-option" data-value="floral-light">Floral Light</div>
+                            <div class="custom-option" data-value="midnight-dark">Midnight Dark</div>
+                            <div class="custom-option" data-value="heritage-series">Heritage Series</div>
+                            <div class="custom-option" data-value="velvet-champagne">Velvet Champagne</div>
+                            <div class="custom-option" data-value="nordic-minimalist">Nordic Minimalist</div>
+                            <div class="custom-option" data-value="royal-emerald">Royal Emerald & Gold</div>
+                            <div class="custom-option" data-value="golden-sunset">Golden Sunset</div>
+                            <div class="custom-option" data-value="minimalist-elegant">Minimalist Elegant</div>
+                        </div>
+                    </div>
+                    <input type="hidden" id="order-theme-id">
+                </div>
+                <div class="order-field">
+                    <label>Durasi Aktif <span style="color:#e74c3c;">*</span></label>
+                    <div class="durations-grid">
+                        <label class="dur-label">
+                            <input type="radio" name="order-dur" value="1"> 1 Bln
+                        </label>
+                        <label class="dur-label">
+                            <input type="radio" name="order-dur" value="2"> 2 Bln
+                        </label>
+                        <label class="dur-label">
+                            <input type="radio" name="order-dur" value="3" checked> 3 Bln
+                        </label>
+                    </div>
+                </div>
+                <button type="submit" id="btn-order-submit">
+                    PESAN SEKARANG <i class="fab fa-whatsapp"></i>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <style>
+        .order-modal { 
+            background: #1a120b; 
+            border: 1px solid rgba(184, 134, 11, 0.3); 
+            border-radius: 24px; 
+            padding: 35px; 
+            width: 100%;
+            max-width: 450px; 
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+            position: relative;
+        }
+        .order-modal-header h2 { 
+            font-family: 'Cinzel Decorative', cursive; 
+            color: #b8860b; 
+            font-size: 1.4rem; 
+            margin: 0 0 10px 0; 
+            letter-spacing: 2px; 
+        }
+        .order-modal-header p { 
+            color: #aaa; 
+            font-size: 0.9rem; 
+            margin-bottom: 25px; 
+        }
+        
+        .order-field {
+            margin-bottom: 20px;
+        }
+        .order-field label { 
+            display: block; 
+            color: #fff; 
+            font-size: 0.85rem; 
+            margin-bottom: 8px; 
+            font-weight: 600; 
+            text-transform: uppercase; 
+            letter-spacing: 1px; 
+        }
+        
+        #order-name { 
+            width: 100%; 
+            padding: 14px; 
+            background: rgba(255, 255, 255, 0.05); 
+            border: 1px solid rgba(184, 134, 11, 0.2); 
+            border-radius: 12px; 
+            color: #fff; 
+            box-sizing: border-box;
+            font-family: inherit;
+            font-size: 0.95rem;
+            transition: 0.3s;
+        }
+        #order-name:focus {
+            outline: none;
+            border-color: #b8860b;
+            background: rgba(255, 255, 255, 0.08);
+        }
+        
+        /* Custom Select Styling */
+        .custom-select {
+            position: relative;
+            width: 100%;
+            user-select: none;
+        }
+        .custom-select-trigger {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(184, 134, 11, 0.2);
+            padding: 14px 20px;
+            border-radius: 12px;
+            color: #fff;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+            font-size: 0.95rem;
+        }
+        .custom-select-trigger:hover {
+            border-color: #b8860b;
+            background: rgba(184, 134, 11, 0.08);
+        }
+        .custom-select.open .custom-select-trigger {
+            border-color: #b8860b;
+            box-shadow: 0 0 15px rgba(184, 134, 11, 0.2);
+        }
+        .custom-select-trigger i {
+            transition: transform 0.3s ease;
+            color: #b8860b;
+        }
+        .custom-select.open .custom-select-trigger i {
+            transform: rotate(180deg);
+        }
+        .custom-options {
+            position: absolute;
+            top: calc(100% + 8px);
+            left: 0;
+            width: 100%;
+            background: #1a120b;
+            border: 1px solid rgba(184, 134, 11, 0.3);
+            border-radius: 12px;
+            overflow: hidden;
+            z-index: 100;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.6);
+        }
+        .custom-select.open .custom-options {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+        .custom-option {
+            padding: 14px 20px;
+            color: #ccc;
+            cursor: pointer;
+            transition: 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 0.95rem;
+        }
+        .custom-option:hover {
+            background: rgba(184, 134, 11, 0.1);
+            color: #b8860b;
+            padding-left: 25px;
+        }
+        .custom-option.active {
+            background: rgba(184, 134, 11, 0.2);
+            color: #b8860b;
+            font-weight: 700;
+        }
+        .custom-option.active::after {
+            content: '\f00c';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            font-size: 0.8rem;
+        }
+        
+        .durations-grid {
+            display: grid; 
+            grid-template-columns: repeat(3, 1fr); 
+            gap: 10px;
+        }
+        .dur-label {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(184, 134, 11, 0.2);
+            padding: 12px 10px;
+            border-radius: 10px;
+            text-align: center;
+            color: #fff;
+            cursor: pointer;
+            font-size: 0.8rem;
+            font-weight: bold;
+            transition: 0.3s;
+            display: block;
+        }
+        .dur-label input[type="radio"] {
+            display: none;
+        }
+        .dur-label:has(input:checked) {
+            background: rgba(184, 134, 11, 0.2) !important;
+            border: 1px solid #b8860b !important;
+            color: #b8860b !important;
+        }
+        .dur-label:hover {
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        #btn-order-submit { 
+            width: 100%; 
+            padding: 16px; 
+            background: #b8860b !important; 
+            color: #1a120b !important; 
+            border: none !important; 
+            border-radius: 14px !important; 
+            font-weight: bold !important; 
+            cursor: pointer; 
+            text-transform: uppercase; 
+            letter-spacing: 1px; 
+            transition: 0.3s; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            gap: 10px;
+            margin-top: 25px;
+            font-size: 0.95rem;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+        }
+        #btn-order-submit:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 30px rgba(184, 134, 11, 0.4);
+        }
+        .order-modal-close { 
+            position: absolute; 
+            top: 20px; 
+            right: 20px; 
+            background: none; 
+            border: none; 
+            color: #fff; 
+            font-size: 24px; 
+            cursor: pointer; 
+            opacity: 0.6; 
+            transition: 0.3s;
+        }
+        .order-modal-close:hover {
+            opacity: 1;
+        }
+    </style>
+
+    <!-- FOOTER -->
+    <footer class="lp-footer">
+        <p>&copy; <span id="current-year">2026</span> <span id="brand-footer">SEJOLI</span> &bull; PREMIUM
+            SERVICE</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script type="module" src="/supabase-config.js"></script>
+    <script type="module" src="/landing/landing.js"></script>
+</body>
+
+</html>

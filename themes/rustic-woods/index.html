@@ -1,0 +1,1552 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Wedding of Julian &amp; Clara - Rustic Woods</title>
+  <meta name="description" content="Undangan pernikahan digital eksklusif bertema Rustic Woods dengan kehangatan serat kayu alami, kraft paper, dan aksen botanical." />
+  <meta property="og:title" content="The Wedding of Julian &amp; Clara - Rustic Woods" />
+  <meta property="og:description" content="Undangan pernikahan digital eksklusif bertema Rustic Woods dengan kehangatan serat kayu alami, kraft paper, dan aksen botanical." />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Google Fonts: Baskervville (Classic Serif), Lato (Clean Sans), Caveat & Homemade Apple (Organic Handwritten Script) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Baskervville:ital@0;1&family=Caveat:wght@400;500;600;700&family=Homemade+Apple&family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet" />
+
+  <!-- FontAwesome 6 CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            rustic: {
+              bark: '#23160F',
+              wood: '#3D2214',
+              cinnamon: '#6B381E',
+              terracotta: '#B85D3B',
+              terracottaLight: '#D07653',
+              gold: '#C59E56',
+              goldMuted: '#D8B87A',
+              sand: '#DFCEBC',
+              kraft: '#EDE0D0',
+              cream: '#F6EFE6',
+              card: '#FBF7F0',
+              sage: '#5E7052',
+              sageLight: '#7D9370',
+            }
+          },
+          fontFamily: {
+            sans: ['Lato', 'sans-serif'],
+            serif: ['Baskervville', 'serif'],
+            script: ['Caveat', 'cursive'],
+            handwritten: ['"Homemade Apple"', 'cursive'],
+          },
+          letterSpacing: {
+            rustic: '0.18em',
+            wideVintage: '0.25em',
+          }
+        }
+      }
+    };
+  </script>
+
+  <!-- Supabase Client v2 & Sejoli Config -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="/supabase-config.js"></script>
+  <script src="/config.js"></script>
+
+  <style>
+    /* Base typography and Rustic warm kraft textures */
+    body {
+      font-family: 'Lato', sans-serif;
+      background-color: #23160F;
+      color: #3D2214;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      overflow-x: hidden;
+    }
+
+    /* Script font protection against clipping */
+    .font-script, .font-handwritten {
+      overflow: visible;
+      line-height: 1.35;
+    }
+
+    /* Natural Kraft Paper Textured Background */
+    .rustic-kraft-bg {
+      background-color: #F6EFE6;
+      background-image: 
+        radial-gradient(#C59E56 0.75px, transparent 0.75px),
+        radial-gradient(#6B381E 0.5px, #F6EFE6 0.5px);
+      background-size: 30px 30px;
+      background-position: 0 0, 15px 15px;
+      background-blend-mode: multiply;
+    }
+
+    /* Wood Grain Strip Pattern */
+    .rustic-wood-accent {
+      background: linear-gradient(135deg, #3D2214 0%, #2A170C 100%);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 8px 24px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Kraft Paper Card with Stitch/Rough Border */
+    .rustic-card {
+      background: #FBF7F0;
+      border: 1px solid #DFCBB5;
+      box-shadow: 0 10px 30px -5px rgba(61, 34, 20, 0.08), 0 4px 10px -2px rgba(61, 34, 20, 0.04);
+      position: relative;
+    }
+
+    .rustic-card-stitched {
+      background: #FBF7F0;
+      border: 2px dashed #D2BA9F;
+      box-shadow: 0 12px 28px -6px rgba(61, 34, 20, 0.09);
+      position: relative;
+    }
+
+    .rustic-card-dark {
+      background: #2D1A10;
+      border: 1px solid rgba(197, 158, 86, 0.3);
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4);
+    }
+
+    /* Polaroid photo styling */
+    .rustic-polaroid {
+      background: #FFFFFF;
+      padding: 10px 10px 32px 10px;
+      box-shadow: 0 8px 20px rgba(61, 34, 20, 0.15), 0 2px 6px rgba(0, 0, 0, 0.06);
+      transform: rotate(-1.5deg);
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+    .rustic-polaroid-alt {
+      background: #FFFFFF;
+      padding: 10px 10px 32px 10px;
+      box-shadow: 0 8px 20px rgba(61, 34, 20, 0.15), 0 2px 6px rgba(0, 0, 0, 0.06);
+      transform: rotate(1.5deg);
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+    .rustic-polaroid:hover, .rustic-polaroid-alt:hover {
+      transform: rotate(0deg) scale(1.02);
+      box-shadow: 0 14px 28px rgba(61, 34, 20, 0.22);
+    }
+
+    /* Wooden/Wax Seal Button Effect */
+    .btn-wax-seal {
+      background: linear-gradient(135deg, #B85D3B 0%, #8D3C1F 100%);
+      color: #FFFFFF;
+      border: 1px solid #D87B57;
+      box-shadow: 0 6px 18px rgba(184, 93, 59, 0.35), inset 0 1px 1px rgba(255, 255, 255, 0.3);
+      transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+    }
+    .btn-wax-seal:hover {
+      background: linear-gradient(135deg, #C86D51 0%, #9D4728 100%);
+      box-shadow: 0 8px 22px rgba(184, 93, 59, 0.45), inset 0 1px 1px rgba(255, 255, 255, 0.4);
+      transform: translateY(-2px);
+    }
+    .btn-wax-seal:active {
+      transform: translateY(1px);
+    }
+
+    /* Vintage tape badge */
+    .washi-tape {
+      background: rgba(223, 203, 181, 0.8);
+      backdrop-filter: blur(2px);
+      box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+    }
+
+    /* Ultra-Smooth Welcome Screen Transition */
+    #lockscreen {
+      transition: transform 1.6s cubic-bezier(0.77, 0, 0.175, 1), opacity 1.4s ease, filter 1.4s ease;
+      will-change: transform, opacity, filter;
+    }
+    #lockscreen.unlocked {
+      transform: translateY(-100%);
+      opacity: 0;
+      filter: blur(8px);
+      pointer-events: none;
+    }
+    #lockscreen-card {
+      transition: transform 1.2s cubic-bezier(0.77, 0, 0.175, 1), opacity 1s ease;
+    }
+    #lockscreen.unlocked #lockscreen-card {
+      transform: translateY(-50px) scale(0.96);
+      opacity: 0;
+    }
+
+    /* Main Content Entrance Animation */
+    #main-content {
+      transition: opacity 1.4s cubic-bezier(0.16, 1, 0.3, 1), transform 1.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    body.is-locked #main-content {
+      opacity: 0.4;
+      transform: scale(0.98) translateY(20px);
+    }
+    body.is-unlocked #main-content {
+      opacity: 1;
+      transform: scale(1) translateY(0);
+    }
+
+    /* Spinning disc animation */
+    @keyframes spin-slow {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+    .animate-spin-slow {
+      animation: spin-slow 8s linear infinite;
+    }
+
+    /* Floating navigation appearance */
+    #floating-nav, #audio-control-container {
+      transition: opacity 0.8s ease 0.4s, transform 0.8s ease 0.4s;
+    }
+
+    /* Toast Notification */
+    #toast-notification {
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+  </style>
+</head>
+
+<body class="is-locked selection:bg-rustic-terracotta selection:text-white">
+  <!-- Audio Element -->
+  <audio id="bgm-audio" loop preload="auto"></audio>
+
+  <!-- Toast Notification -->
+  <div id="toast-notification" class="fixed top-5 left-1/2 -translate-x-1/2 z-[100000] opacity-0 pointer-events-none -translate-y-5 px-5 py-3 rounded-full bg-rustic-bark/95 text-rustic-cream border border-rustic-gold/50 shadow-2xl flex items-center gap-3 text-xs tracking-wider font-medium max-w-[90vw]">
+    <i id="toast-icon" class="fa-solid fa-circle-check text-rustic-gold text-sm"></i>
+    <span id="toast-message">Pesan sukses</span>
+  </div>
+
+  <!-- ========================================== -->
+  <!-- 1. WELCOME SCREEN / LOCKSCREEN OVERLAY -->
+  <!-- ========================================== -->
+  <section id="lockscreen" class="fixed inset-0 z-[9999] flex items-center justify-center overflow-hidden bg-rustic-bark">
+    <!-- Atmospheric Background Images with Rustic Wooden Tint -->
+    <div class="absolute inset-0 z-0">
+      <img id="lockscreen-bg-img" 
+           src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1920&q=80" 
+           alt="Rustic Wedding Cover" 
+           class="w-full h-full object-cover opacity-35 scale-105 filter brightness-75 contrast-110" />
+      <div class="absolute inset-0 bg-gradient-to-t from-rustic-bark via-rustic-bark/85 to-rustic-bark/60"></div>
+      
+      <!-- Subtle warm wood/leaf ambient glow -->
+      <div class="absolute top-1/4 left-1/2 -translate-x-1/2 w-96 h-96 bg-rustic-terracotta/20 rounded-full blur-3xl pointer-events-none"></div>
+    </div>
+
+    <!-- Centered Kraft Invitation Card -->
+    <div id="lockscreen-card" class="relative z-10 w-[92%] max-w-md mx-auto my-auto p-6 sm:p-8 rounded-2xl rustic-card-stitched text-center">
+      <!-- Decorative Washi Tape Effect at Top -->
+      <div class="absolute -top-3 left-1/2 -translate-x-1/2 washi-tape px-6 py-1 text-[10px] uppercase tracking-wideVintage font-serif text-rustic-cinnamon font-semibold rounded-xs">
+        THE WEDDING INVITATION
+      </div>
+
+      <!-- Botanical Foliage SVG Wreath / Branch -->
+      <div class="flex justify-center mb-2 mt-2">
+        <svg class="w-12 h-12 text-rustic-cinnamon" viewBox="0 0 100 100" fill="currentColor">
+          <path d="M50 15 C45 30 35 40 20 45 C35 50 45 60 50 75 C55 60 65 50 80 45 C65 40 55 30 50 15 Z" opacity="0.3" />
+          <circle cx="50" cy="45" r="4" fill="#C59E56"/>
+          <path d="M50 25 C47 35 40 40 30 45 C40 50 47 55 50 65 C53 55 60 50 70 45 C60 40 53 35 50 25 Z" fill="#6B381E" opacity="0.7"/>
+        </svg>
+      </div>
+
+      <p class="text-xs uppercase tracking-wideVintage font-serif text-rustic-terracotta font-semibold">
+        WALIMATUL 'URS
+      </p>
+
+      <!-- Couple Name in Natural Script -->
+      <h1 class="font-script text-4xl sm:text-5xl text-rustic-bark mt-2 mb-1 tracking-wide font-normal overflow-visible">
+        <span id="lock-groom-name">Julian</span>
+        <span class="text-rustic-gold font-serif text-2xl mx-1.5">&amp;</span>
+        <span id="lock-bride-name">Clara</span>
+      </h1>
+
+      <p id="lock-event-date" class="text-xs text-rustic-cinnamon font-serif italic mb-6">
+        Sabtu, 24 Oktober 2026
+      </p>
+
+      <!-- Recipient / Tamu Undangan Box -->
+      <div class="bg-rustic-cream/90 border border-rustic-sand/80 rounded-xl p-4 mb-6 shadow-inner text-center">
+        <span class="text-[10px] uppercase tracking-wideVintage text-rustic-cinnamon/80 font-bold block mb-1">
+          KEPADA YTH. BAPAK/IBU/SAUDARA/I:
+        </span>
+        <h2 id="lock-guest-name" class="text-lg sm:text-xl font-serif font-bold text-rustic-bark">
+          Tamu Undangan
+        </h2>
+        <p class="text-[11px] text-rustic-cinnamon/70 italic mt-1 font-sans">
+          Merupakan suatu kehormatan &amp; kebahagiaan bagi kami atas kehadiran Anda.
+        </p>
+      </div>
+
+      <!-- CTA Open Invitation Button -->
+      <button id="btn-open-invitation" type="button" class="w-full btn-wax-seal py-3.5 px-6 rounded-xl font-serif font-semibold tracking-wide flex items-center justify-center gap-3 text-sm cursor-pointer">
+        <i class="fa-solid fa-envelope-open-text text-base"></i>
+        <span>BUKA UNDANGAN</span>
+      </button>
+
+      <p class="text-[10px] text-rustic-cinnamon/60 mt-4 tracking-wider uppercase font-sans">
+        Putar Musik Otomatis Saat Dibuka
+      </p>
+    </div>
+  </section>
+
+  <!-- ========================================== -->
+  <!-- 2. FLOATING CONTROLS (MUSIC & NAVIGATION) -->
+  <!-- ========================================== -->
+  <!-- Audio Toggle Button -->
+  <div id="audio-control-container" class="fixed top-5 right-5 z-50 opacity-0 pointer-events-none">
+    <button id="btn-toggle-audio" type="button" 
+            class="w-11 h-11 rounded-full rustic-wood-accent border border-rustic-gold/50 text-rustic-gold flex items-center justify-center shadow-xl hover:scale-105 active:scale-95 transition-transform cursor-pointer"
+            title="Nyalakan / Hentikan Musik">
+      <i id="audio-icon" class="fa-solid fa-music text-sm"></i>
+    </button>
+  </div>
+
+  <!-- Bottom Floating Navigation -->
+  <div id="floating-nav" class="fixed bottom-4 left-1/2 -translate-x-1/2 z-50 opacity-0 pointer-events-none translate-y-4">
+    <nav class="flex items-center gap-1 sm:gap-2 px-3 py-2 rounded-full rustic-wood-accent border border-rustic-gold/40 shadow-2xl backdrop-blur-md">
+      <a href="#hero-section" class="px-2.5 py-1.5 rounded-full text-rustic-sand hover:text-white hover:bg-rustic-cinnamon/40 text-xs flex flex-col items-center gap-0.5 transition-colors">
+        <i class="fa-solid fa-home text-xs"></i>
+        <span class="text-[9px] font-sans">Awal</span>
+      </a>
+      <a href="#couple-section" class="px-2.5 py-1.5 rounded-full text-rustic-sand hover:text-white hover:bg-rustic-cinnamon/40 text-xs flex flex-col items-center gap-0.5 transition-colors">
+        <i class="fa-solid fa-heart text-xs"></i>
+        <span class="text-[9px] font-sans">Mempelai</span>
+      </a>
+      <a href="#event-section" class="px-2.5 py-1.5 rounded-full text-rustic-sand hover:text-white hover:bg-rustic-cinnamon/40 text-xs flex flex-col items-center gap-0.5 transition-colors">
+        <i class="fa-solid fa-calendar-days text-xs"></i>
+        <span class="text-[9px] font-sans">Acara</span>
+      </a>
+      <a href="#story-gallery-section" id="nav-link-story" class="px-2.5 py-1.5 rounded-full text-rustic-sand hover:text-white hover:bg-rustic-cinnamon/40 text-xs flex flex-col items-center gap-0.5 transition-colors">
+        <i class="fa-solid fa-camera-retro text-xs"></i>
+        <span class="text-[9px] font-sans">Galeri</span>
+      </a>
+      <a href="#gift-section" class="px-2.5 py-1.5 rounded-full text-rustic-sand hover:text-white hover:bg-rustic-cinnamon/40 text-xs flex flex-col items-center gap-0.5 transition-colors">
+        <i class="fa-solid fa-gift text-xs"></i>
+        <span class="text-[9px] font-sans">Kado</span>
+      </a>
+      <a href="#wishes-section" class="px-2.5 py-1.5 rounded-full text-rustic-sand hover:text-white hover:bg-rustic-cinnamon/40 text-xs flex flex-col items-center gap-0.5 transition-colors">
+        <i class="fa-solid fa-comment-dots text-xs"></i>
+        <span class="text-[9px] font-sans">Ucapan</span>
+      </a>
+    </nav>
+  </div>
+
+  <!-- ========================================== -->
+  <!-- 3. MAIN INVITATION CONTENT CONTAINER -->
+  <!-- ========================================== -->
+  <main id="main-content" class="w-full max-w-lg mx-auto rustic-kraft-bg min-h-screen shadow-2xl relative pb-28 border-x border-rustic-sand/40">
+
+    <!-- HERO SECTION -->
+    <section id="hero-section" class="relative pt-12 pb-16 px-6 text-center overflow-hidden border-b border-rustic-sand/60">
+      <!-- Top Decorative Leaves SVG -->
+      <div class="flex items-center justify-center gap-3 text-rustic-terracotta mb-4 opacity-80">
+        <i class="fa-solid fa-leaf rotate-45 text-sm"></i>
+        <span class="w-12 h-[1px] bg-rustic-terracotta/40"></span>
+        <span class="text-[11px] uppercase tracking-wideVintage font-serif font-bold text-rustic-cinnamon">THE WEDDING CELEBRATION</span>
+        <span class="w-12 h-[1px] bg-rustic-terracotta/40"></span>
+        <i class="fa-solid fa-leaf -rotate-45 text-sm"></i>
+      </div>
+
+      <!-- Main Couple Names -->
+      <h2 class="font-script text-5xl sm:text-6xl text-rustic-bark tracking-wide font-normal mb-3 overflow-visible">
+        <span class="main-groom-nick">Julian</span>
+        <span class="text-rustic-terracotta font-serif text-3xl sm:text-4xl mx-2">&amp;</span>
+        <span class="main-bride-nick">Clara</span>
+      </h2>
+
+      <p id="hero-date" class="text-xs uppercase tracking-wideVintage font-serif text-rustic-cinnamon font-semibold mb-8">
+        Sabtu, 24 Oktober 2026 · Bandung
+      </p>
+
+      <!-- Romantic Couple Portrait Polaroid -->
+      <div class="max-w-[280px] sm:max-w-[300px] mx-auto mb-8">
+        <div class="rustic-polaroid">
+          <div class="aspect-[4/5] overflow-hidden rounded-xs bg-rustic-sand/30">
+            <img id="hero-couple-img" 
+                 src="https://images.unsplash.com/photo-1583939003579-730e3918a45a?auto=format&fit=crop&w=800&q=80" 
+                 alt="Mempelai Julian &amp; Clara" 
+                 class="w-full h-full object-cover" />
+          </div>
+          <p class="font-handwritten text-rustic-bark text-base mt-3 text-center">
+            Julian &amp; Clara's Day
+          </p>
+        </div>
+      </div>
+
+      <!-- COUNTDOWN TIMER -->
+      <div class="rustic-card p-5 rounded-2xl max-w-sm mx-auto shadow-md">
+        <p class="text-[10px] uppercase tracking-wideVintage font-serif font-bold text-rustic-terracotta mb-3">
+          MENGHITUNG HARI BAHAGIA
+        </p>
+        <div class="grid grid-cols-4 gap-2 text-center" id="countdown-container">
+          <div class="bg-rustic-cream p-2.5 rounded-xl border border-rustic-sand/80 shadow-xs">
+            <span id="cd-days" class="text-xl sm:text-2xl font-serif font-bold text-rustic-bark block leading-tight">00</span>
+            <span class="text-[9px] uppercase tracking-wider text-rustic-cinnamon font-sans">Hari</span>
+          </div>
+          <div class="bg-rustic-cream p-2.5 rounded-xl border border-rustic-sand/80 shadow-xs">
+            <span id="cd-hours" class="text-xl sm:text-2xl font-serif font-bold text-rustic-bark block leading-tight">00</span>
+            <span class="text-[9px] uppercase tracking-wider text-rustic-cinnamon font-sans">Jam</span>
+          </div>
+          <div class="bg-rustic-cream p-2.5 rounded-xl border border-rustic-sand/80 shadow-xs">
+            <span id="cd-minutes" class="text-xl sm:text-2xl font-serif font-bold text-rustic-bark block leading-tight">00</span>
+            <span class="text-[9px] uppercase tracking-wider text-rustic-cinnamon font-sans">Menit</span>
+          </div>
+          <div class="bg-rustic-cream p-2.5 rounded-xl border border-rustic-sand/80 shadow-xs">
+            <span id="cd-seconds" class="text-xl sm:text-2xl font-serif font-bold text-rustic-terracotta block leading-tight">00</span>
+            <span class="text-[9px] uppercase tracking-wider text-rustic-cinnamon font-sans">Detik</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- QUOTES / AYAT SUCI SECTION -->
+    <section class="py-12 px-6 text-center border-b border-rustic-sand/50">
+      <div class="max-w-md mx-auto rustic-card-stitched p-6 sm:p-8 rounded-2xl relative">
+        <i class="fa-solid fa-quote-left text-2xl text-rustic-terracotta/40 mb-3 block"></i>
+        <p id="quote-text" class="text-xs sm:text-sm text-rustic-cinnamon font-serif italic leading-relaxed mb-4">
+          "Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia menciptakan pasangan-pasangan untukmu dari jenismu sendiri, agar kamu cenderung dan merasa tenteram kepadanya, dan Dia menjadikan di antaramu rasa kasih dan sayang."
+        </p>
+        <span id="quote-source" class="text-[10px] uppercase tracking-wideVintage font-serif font-bold text-rustic-bark block">
+          — QS. AR-RUM: 21
+        </span>
+      </div>
+    </section>
+
+    <!-- COUPLE SECTION -->
+    <section id="couple-section" class="py-14 px-6 border-b border-rustic-sand/60">
+      <div class="text-center mb-10">
+        <span class="text-[10px] uppercase tracking-wideVintage font-serif font-bold text-rustic-terracotta">
+          PASANGAN MEMPELAI
+        </span>
+        <h3 class="font-serif text-2xl sm:text-3xl text-rustic-bark mt-1">
+          Mempelai yang Berbahagia
+        </h3>
+        <p class="text-xs text-rustic-cinnamon mt-2 font-sans max-w-sm mx-auto">
+          Dengan memohon rahmat dan ridho Allah Subhanahu Wa Ta'ala, kami mengundang Anda untuk merayakan pernikahan kami:
+        </p>
+      </div>
+
+      <!-- GROOM CARD -->
+      <div class="rustic-card p-6 sm:p-7 rounded-2xl mb-8 text-center max-w-sm mx-auto">
+        <div class="w-32 h-32 sm:w-36 sm:h-36 mx-auto rounded-full overflow-hidden border-4 border-rustic-cream shadow-md mb-4 bg-rustic-sand/30">
+          <img id="groom-img" 
+               src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80" 
+               alt="Mempelai Pria" 
+               class="w-full h-full object-cover" />
+        </div>
+
+        <h4 id="groom-fullname" class="text-xl font-serif font-bold text-rustic-bark">
+          Julian Pratama, S.T.
+        </h4>
+        <p id="groom-parents" class="text-xs text-rustic-cinnamon mt-1.5 leading-relaxed font-sans">
+          Putra pertama dari Bapak Hendra Pratama &amp; Ibu Ratna Sari
+        </p>
+
+        <!-- Groom Social Media Container (Hidden 100% if empty) -->
+        <div id="groom-social-container" class="mt-4 pt-3 border-t border-rustic-sand/60">
+          <a id="groom-instagram" href="#" target="_blank" rel="noopener noreferrer" 
+             class="inline-flex items-center gap-2 text-xs font-serif text-rustic-terracotta hover:text-rustic-cinnamon transition-colors px-3 py-1.5 rounded-full bg-rustic-cream border border-rustic-sand/60">
+            <i id="groom-social-icon" class="fa-brands fa-instagram text-sm"></i>
+            <span id="groom-ig-handle">@julianpratama</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- AMPERSAND DIVIDER -->
+      <div class="text-center my-4 font-script text-4xl text-rustic-terracotta overflow-visible">
+        &amp;
+      </div>
+
+      <!-- BRIDE CARD -->
+      <div class="rustic-card p-6 sm:p-7 rounded-2xl text-center max-w-sm mx-auto">
+        <div class="w-32 h-32 sm:w-36 sm:h-36 mx-auto rounded-full overflow-hidden border-4 border-rustic-cream shadow-md mb-4 bg-rustic-sand/30">
+          <img id="bride-img" 
+               src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=400&q=80" 
+               alt="Mempelai Wanita" 
+               class="w-full h-full object-cover" />
+        </div>
+
+        <h4 id="bride-fullname" class="text-xl font-serif font-bold text-rustic-bark">
+          Clara Anindya, S.Ked
+        </h4>
+        <p id="bride-parents" class="text-xs text-rustic-cinnamon mt-1.5 leading-relaxed font-sans">
+          Putri kedua dari Bapak Gunawan Wijaya &amp; Ibu Sri Lestari
+        </p>
+
+        <!-- Bride Social Media Container (Hidden 100% if empty) -->
+        <div id="bride-social-container" class="mt-4 pt-3 border-t border-rustic-sand/60">
+          <a id="bride-instagram" href="#" target="_blank" rel="noopener noreferrer" 
+             class="inline-flex items-center gap-2 text-xs font-serif text-rustic-terracotta hover:text-rustic-cinnamon transition-colors px-3 py-1.5 rounded-full bg-rustic-cream border border-rustic-sand/60">
+            <i id="bride-social-icon" class="fa-brands fa-instagram text-sm"></i>
+            <span id="bride-ig-handle">@claraanindya</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- EVENTS SECTION -->
+    <section id="event-section" class="py-14 px-6 border-b border-rustic-sand/60">
+      <div class="text-center mb-10">
+        <span class="text-[10px] uppercase tracking-wideVintage font-serif font-bold text-rustic-terracotta">
+          RANGKAIAN ACARA
+        </span>
+        <h3 class="font-serif text-2xl sm:text-3xl text-rustic-bark mt-1">
+          Agenda Pernikahan
+        </h3>
+        <p class="text-xs text-rustic-cinnamon mt-2 font-sans max-w-sm mx-auto">
+          Insya Allah akan diselenggarakan pada waktu dan tempat sebagai berikut:
+        </p>
+      </div>
+
+      <!-- Events Dynamic Container -->
+      <div id="events-container" class="space-y-6 max-w-md mx-auto">
+        <!-- Rendered via JS -->
+      </div>
+    </section>
+
+    <!-- STORY & GALLERY SECTION -->
+    <section id="story-gallery-section" class="py-14 px-6 border-b border-rustic-sand/60">
+      <!-- Love Stories Sub-section (conditionally rendered) -->
+      <div id="stories-section" class="mb-14">
+        <div class="text-center mb-8">
+          <span class="text-[10px] uppercase tracking-wideVintage font-serif font-bold text-rustic-terracotta">
+            KISAH KITA
+          </span>
+          <h3 class="font-serif text-2xl sm:text-3xl text-rustic-bark mt-1">
+            Cerita Cinta
+          </h3>
+        </div>
+
+        <div id="stories-container" class="space-y-6 max-w-md mx-auto relative before:absolute before:inset-y-0 before:left-4 sm:before:left-6 before:w-[2px] before:bg-rustic-sand">
+          <!-- Rendered via JS -->
+        </div>
+      </div>
+
+      <!-- Photo Gallery Sub-section (conditionally rendered) -->
+      <div id="gallery-section">
+        <div class="text-center mb-8">
+          <span class="text-[10px] uppercase tracking-wideVintage font-serif font-bold text-rustic-terracotta">
+            MOMEN BAHAGIA
+          </span>
+          <h3 class="font-serif text-2xl sm:text-3xl text-rustic-bark mt-1">
+            Galeri Kenangan
+          </h3>
+        </div>
+
+        <div id="gallery-container" class="grid grid-cols-2 gap-3 max-w-md mx-auto">
+          <!-- Rendered via JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- VIDEO SECTION (conditionally rendered) -->
+    <section id="video-section" class="py-14 px-6 border-b border-rustic-sand/60 hidden">
+      <div class="text-center mb-6">
+        <span class="text-[10px] uppercase tracking-wideVintage font-serif font-bold text-rustic-terracotta">
+          VIDEO KEBERSAMAAN
+        </span>
+        <h3 class="font-serif text-2xl sm:text-3xl text-rustic-bark mt-1">
+          Momen Indah Kami
+        </h3>
+      </div>
+      <div class="rustic-card p-3 rounded-2xl max-w-md mx-auto overflow-hidden shadow-lg">
+        <div class="aspect-video w-full rounded-xl overflow-hidden bg-rustic-bark">
+          <iframe id="youtube-iframe" class="w-full h-full border-0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+      </div>
+    </section>
+
+    <!-- WEDDING GIFTS / AMPLOP DIGITAL SECTION -->
+    <section id="gift-section" class="py-14 px-6 border-b border-rustic-sand/60">
+      <div class="text-center mb-10">
+        <span class="text-[10px] uppercase tracking-wideVintage font-serif font-bold text-rustic-terracotta">
+          TANDA KASIH
+        </span>
+        <h3 class="font-serif text-2xl sm:text-3xl text-rustic-bark mt-1">
+          Kirim Hadiah &amp; Doa
+        </h3>
+        <p class="text-xs text-rustic-cinnamon mt-2 font-sans max-w-sm mx-auto">
+          Doa restu Anda merupakan karunia yang sangat berarti bagi kami. Namun jika ingin memberikan tanda kasih secara digital, Anda dapat melalui rekening/e-wallet berikut:
+        </p>
+      </div>
+
+      <!-- Bank Accounts / E-wallets Container -->
+      <div id="bank-accounts-container" class="space-y-4 max-w-md mx-auto">
+        <!-- Rendered via JS with Vector SVG Bank Logos -->
+      </div>
+
+      <!-- Physical Gift Address (Optional) -->
+      <div id="gift-address-container" class="mt-6 rustic-card-stitched p-5 rounded-2xl max-w-md mx-auto text-center hidden">
+        <i class="fa-solid fa-box-archive text-xl text-rustic-terracotta mb-2"></i>
+        <h5 class="text-xs uppercase tracking-wideVintage font-serif font-bold text-rustic-bark">
+          KIRIM KADO FISIK
+        </h5>
+        <p id="gift-address-text" class="text-xs text-rustic-cinnamon mt-1 leading-relaxed font-sans">
+          Jl. Cempaka Putih No. 12, Bandung, Jawa Barat (40123)
+        </p>
+        <button type="button" onclick="window.copyTextToClipboard(document.getElementById('gift-address-text').textContent, 'Alamat pengiriman kado')"
+                class="mt-3 inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-rustic-cream border border-rustic-sand text-[11px] font-serif text-rustic-bark hover:bg-rustic-sand/40 transition-colors cursor-pointer">
+          <i class="fa-regular fa-clone text-xs"></i>
+          <span>Salin Alamat</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- WISHES & RSVP SECTION (REALTIME SUPABASE) -->
+    <section id="wishes-section" class="py-14 px-6 border-b border-rustic-sand/60">
+      <div class="text-center mb-8">
+        <span class="text-[10px] uppercase tracking-wideVintage font-serif font-bold text-rustic-terracotta">
+          BUKU TAMU &amp; KONFIRMASI
+        </span>
+        <h3 class="font-serif text-2xl sm:text-3xl text-rustic-bark mt-1">
+          Doa &amp; Restu Anda
+        </h3>
+        <p class="text-xs text-rustic-cinnamon mt-2 font-sans max-w-sm mx-auto">
+          Tuliskan doa serta konfirmasi kehadiran Anda untuk melengkapi kebahagiaan kami:
+        </p>
+      </div>
+
+      <!-- RSVP FORM -->
+      <div class="rustic-card p-6 sm:p-7 rounded-2xl max-w-md mx-auto shadow-md mb-8">
+        <form id="rsvp-form" class="space-y-4">
+          <div>
+            <label for="rsvp-name" class="block text-xs uppercase tracking-wideVintage font-serif font-bold text-rustic-bark mb-1.5">
+              NAMA ANDA <span class="text-rustic-terracotta">*</span>
+            </label>
+            <input type="text" id="rsvp-name" required placeholder="Tuliskan nama lengkap Anda" 
+                   class="w-full px-4 py-2.5 rounded-xl border border-rustic-sand bg-rustic-cream/70 text-xs text-rustic-bark focus:outline-none focus:border-rustic-terracotta focus:ring-1 focus:ring-rustic-terracotta transition-all" />
+          </div>
+
+          <div>
+            <label class="block text-xs uppercase tracking-wideVintage font-serif font-bold text-rustic-bark mb-1.5">
+              KONFIRMASI KEHADIRAN <span class="text-rustic-terracotta">*</span>
+            </label>
+            <div class="grid grid-cols-3 gap-2">
+              <label class="border border-rustic-sand bg-rustic-cream/60 hover:bg-rustic-cream p-2.5 rounded-xl text-center cursor-pointer transition-colors has-[:checked]:bg-rustic-terracotta has-[:checked]:text-white has-[:checked]:border-rustic-terracotta">
+                <input type="radio" name="attendance" value="Hadir" checked class="sr-only" />
+                <span class="text-xs font-serif font-semibold block">Hadir</span>
+              </label>
+              <label class="border border-rustic-sand bg-rustic-cream/60 hover:bg-rustic-cream p-2.5 rounded-xl text-center cursor-pointer transition-colors has-[:checked]:bg-rustic-terracotta has-[:checked]:text-white has-[:checked]:border-rustic-terracotta">
+                <input type="radio" name="attendance" value="Masih Ragu" class="sr-only" />
+                <span class="text-xs font-serif font-semibold block">Ragu</span>
+              </label>
+              <label class="border border-rustic-sand bg-rustic-cream/60 hover:bg-rustic-cream p-2.5 rounded-xl text-center cursor-pointer transition-colors has-[:checked]:bg-rustic-terracotta has-[:checked]:text-white has-[:checked]:border-rustic-terracotta">
+                <input type="radio" name="attendance" value="Tidak Hadir" class="sr-only" />
+                <span class="text-xs font-serif font-semibold block">Berhalangan</span>
+              </label>
+            </div>
+          </div>
+
+          <div>
+            <label for="rsvp-message" class="block text-xs uppercase tracking-wideVintage font-serif font-bold text-rustic-bark mb-1.5">
+              UCAPAN &amp; DOA RESTU <span class="text-rustic-terracotta">*</span>
+            </label>
+            <textarea id="rsvp-message" required rows="3" placeholder="Tuliskan ucapan selamat & doa restu Anda di sini..." 
+                      class="w-full px-4 py-2.5 rounded-xl border border-rustic-sand bg-rustic-cream/70 text-xs text-rustic-bark focus:outline-none focus:border-rustic-terracotta focus:ring-1 focus:ring-rustic-terracotta transition-all"></textarea>
+          </div>
+
+          <button id="btn-submit-rsvp" type="submit" 
+                  class="w-full btn-wax-seal py-3 rounded-xl font-serif font-semibold text-xs tracking-wider flex items-center justify-center gap-2 cursor-pointer">
+            <i class="fa-regular fa-paper-plane text-xs"></i>
+            <span>KIRIM UCAPAN &amp; DOA</span>
+          </button>
+        </form>
+      </div>
+
+      <!-- WISHES SUMMARY & STATS -->
+      <div class="flex items-center justify-between max-w-md mx-auto mb-4 px-2 text-xs font-serif">
+        <span class="text-rustic-cinnamon">
+          Total Ucapan: <strong id="stat-total-wishes" class="text-rustic-bark font-bold">0</strong>
+        </span>
+        <span class="text-rustic-cinnamon">
+          Tamu Hadir: <strong id="stat-attending-wishes" class="text-rustic-terracotta font-bold">0</strong>
+        </span>
+      </div>
+
+      <!-- WISHES LIST CONTAINER -->
+      <div id="wishes-list" class="space-y-3 max-w-md mx-auto max-h-[420px] overflow-y-auto pr-1">
+        <!-- Rendered via JS -->
+      </div>
+    </section>
+
+    <!-- FOOTER SECTION -->
+    <footer class="pt-12 pb-14 px-6 text-center">
+      <div class="flex items-center justify-center gap-3 text-rustic-terracotta mb-3 opacity-75">
+        <i class="fa-solid fa-leaf rotate-45 text-xs"></i>
+        <span class="w-8 h-[1px] bg-rustic-terracotta/40"></span>
+        <i class="fa-solid fa-leaf -rotate-45 text-xs"></i>
+      </div>
+
+      <p class="font-script text-3xl text-rustic-bark mb-2 overflow-visible">
+        <span class="main-groom-nick">Julian</span> &amp; <span class="main-bride-nick">Clara</span>
+      </p>
+
+      <p class="text-xs text-rustic-cinnamon font-serif italic mb-6">
+        Terima kasih atas doa, restu, dan kehadiran Anda di hari bahagia kami.
+      </p>
+
+      <div class="inline-block border-t border-rustic-sand/80 pt-4 px-8">
+        <p class="text-[10px] text-rustic-cinnamon/70 tracking-wide font-sans">
+          Created with <a href="/" class="text-rustic-terracotta font-serif font-semibold hover:underline">SEJOLI</a>
+        </p>
+      </div>
+    </footer>
+  </main>
+
+  <!-- ========================================== -->
+  <!-- 4. LIGHTBOX MODAL FOR GALLERY PREVIEW -->
+  <!-- ========================================== -->
+  <div id="lightbox-modal" class="fixed inset-0 z-[100000] bg-black/95 hidden flex items-center justify-center p-4">
+    <button id="lightbox-close" class="absolute top-5 right-5 text-white/80 hover:text-white text-2xl p-2 cursor-pointer z-10" aria-label="Tutup">
+      <i class="fa-solid fa-xmark"></i>
+    </button>
+    <button id="lightbox-prev" class="absolute left-4 text-white/80 hover:text-white text-2xl p-3 cursor-pointer z-10" aria-label="Sebelumnya">
+      <i class="fa-solid fa-chevron-left"></i>
+    </button>
+    <button id="lightbox-next" class="absolute right-4 text-white/80 hover:text-white text-2xl p-3 cursor-pointer z-10" aria-label="Selanjutnya">
+      <i class="fa-solid fa-chevron-right"></i>
+    </button>
+    <div class="max-w-3xl max-h-[85vh] overflow-hidden flex items-center justify-center">
+      <img id="lightbox-img" src="" alt="Pratinjau Foto" class="max-w-full max-h-[85vh] object-contain rounded-md shadow-2xl" />
+    </div>
+  </div>
+
+  <!-- ========================================== -->
+  <!-- 5. JAVASCRIPT LOGIC & SUPABASE INTEGRATION -->
+  <!-- ========================================== -->
+  <script>
+    // --- 5.1 DEFAULT FALLBACK CONFIGURATION (RUSTIC WOODS) ---
+    const DEMO_CONFIG = {
+      theme: "rustic-woods",
+      coverImage: "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&q=80",
+      ogImage: "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&q=80",
+      backgroundMusic: "https://assets.mixkit.co/music/preview/mixkit-romantic-wedding-harp-and-strings-1002.mp3",
+      quotes: "Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia menciptakan pasangan-pasangan untukmu dari jenismu sendiri, agar kamu cenderung dan merasa tenteram kepadanya, dan Dia menjadikan di antaramu rasa kasih dan sayang. Sungguh, pada yang demikian itu benar-benar terdapat tanda-tanda bagi kaum yang berpikir.",
+      quote: {
+        source: "— QS. Ar-Rum: 21",
+        translation: "Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia menciptakan pasangan-pasangan untukmu dari jenismu sendiri, agar kamu cenderung dan merasa tenteram kepadanya..."
+      },
+      countdownDate: "2026-10-24",
+      couple: {
+        groom: {
+          name: "Julian",
+          fullname: "Julian Pratama, S.T.",
+          sonOf: "Putra pertama dari Bapak Hendra Pratama & Ibu Ratna Sari",
+          instagram: "julianpratama",
+          socialIcon: "fa-brands fa-instagram",
+          image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=600&q=80"
+        },
+        bride: {
+          name: "Clara",
+          fullname: "Clara Anindya, S.Ked",
+          daughterOf: "Putri kedua dari Bapak Gunawan Wijaya & Ibu Sri Lestari",
+          instagram: "claraanindya",
+          socialIcon: "fa-brands fa-instagram",
+          image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=600&q=80"
+        }
+      },
+      events: [
+        {
+          title: "Akad Nikah",
+          date: "2026-10-24",
+          startTime: "08:00",
+          endTime: "10:00",
+          location: "Masjid Raya Al-Mansyur",
+          address: "Jl. Lembah Pinus No. 18, Ciumbuleuit, Bandung",
+          mapsUrl: "https://maps.google.com"
+        },
+        {
+          title: "Resepsi Pernikahan",
+          date: "2026-10-24",
+          startTime: "11:00",
+          endTime: "14:00",
+          location: "Pine Hill Eco Wedding Park",
+          address: "Jl. Maribaya Timur No. 45, Lembang, Bandung Barat",
+          mapsUrl: "https://maps.google.com"
+        }
+      ],
+      stories: [
+        {
+          year: "2020",
+          title: "Pertemuan Pertama",
+          description: "Pertemuan sederhana di sebuah kedai kopi di Bandung yang membuka cerita baru dalam hidup kami berdua."
+        },
+        {
+          year: "2023",
+          title: "Komitmen Bersama",
+          description: "Setelah perjalanan panjang saling bertumbuh dan mengenal, kami memantapkan niat melangkah ke jenjang yang lebih serius."
+        },
+        {
+          year: "2025",
+          title: "Lamaran & Restu Keluarga",
+          description: "Di hadapan kedua keluarga besar, cincin tersemat sebagai tanda janji suci menuju pernikahan."
+        }
+      ],
+      gallery: [
+        "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1583939003579-730e3918a45a?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1532712938310-34cb3982ef74?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1520854221256-17451cc331bf?auto=format&fit=crop&w=800&q=80"
+      ],
+      gifts: [
+        {
+          bank: "BCA",
+          number: "8720938471",
+          name: "Julian Pratama"
+        },
+        {
+          bank: "Mandiri",
+          number: "1320098765432",
+          name: "Clara Anindya"
+        },
+        {
+          bank: "GoPay",
+          number: "081234567890",
+          name: "Julian Pratama"
+        }
+      ],
+      giftAddress: "Jl. Lembah Pinus No. 18, Ciumbuleuit, Bandung, Jawa Barat (Penerima: Julian Pratama - 081234567890)"
+    };
+
+    // --- 5.2 GLOBAL STATES ---
+    let isMusicPlaying = false;
+    let currentGalleryPhotos = [];
+    let currentLightboxIndex = 0;
+    let localWishes = [
+      {
+        name: "Rian & Natasha",
+        attendance: "Hadir",
+        message: "Selamat Julian dan Clara! Semoga menjadi keluarga yang sakinah, mawaddah, warahmah dan selalu dalam lindungan-Nya.",
+        created_at: "1 jam lalu"
+      },
+      {
+        name: "Keluarga Besar Wicaksono",
+        attendance: "Hadir",
+        message: "Barakallahu lakuma wa baraka alaikuma wa jama'a bainakuma fii khoir. Selamat menempuh hidup baru!",
+        created_at: "3 jam lalu"
+      }
+    ];
+
+    // --- 5.3 HELPER FUNCTIONS ---
+    function formatIndonesianDate(dateString) {
+      if (!dateString) return '';
+      try {
+        const parts = dateString.split('-');
+        if (parts.length === 3) {
+          const year = parseInt(parts[0]);
+          const month = parseInt(parts[1]) - 1;
+          const day = parseInt(parts[2]);
+          const dateObj = new Date(year, month, day);
+          
+          const days = ['Minggu', 'Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu'];
+          const months = ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'];
+          
+          return `${days[dateObj.getDay()]}, ${day} ${months[month]} ${year}`;
+        }
+        return dateString;
+      } catch (e) {
+        return dateString;
+      }
+    }
+
+    function showToast(message, iconClass = "fa-circle-check") {
+      const toast = document.getElementById('toast-notification');
+      const msg = document.getElementById('toast-message');
+      const icon = document.getElementById('toast-icon');
+      if (!toast) return;
+
+      msg.textContent = message;
+      icon.className = `fa-solid ${iconClass} text-rustic-gold text-sm`;
+
+      toast.classList.remove('opacity-0', 'pointer-events-none', '-translate-y-5');
+      toast.classList.add('opacity-100', 'translate-y-0');
+
+      clearTimeout(window.__toastTimeout);
+      window.__toastTimeout = setTimeout(() => {
+        toast.classList.remove('opacity-100', 'translate-y-0');
+        toast.classList.add('opacity-0', 'pointer-events-none', '-translate-y-5');
+      }, 3500);
+    }
+
+    window.copyTextToClipboard = function(text, label) {
+      if (!text) return;
+      if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(text).then(() => {
+          showToast(`${label || 'Teks'} berhasil disalin!`);
+        }).catch(() => fallbackCopy(text, label));
+      } else {
+        fallbackCopy(text, label);
+      }
+    };
+
+    function fallbackCopy(text, label) {
+      const tempInput = document.createElement("input");
+      tempInput.value = text;
+      document.body.appendChild(tempInput);
+      tempInput.select();
+      try {
+        document.execCommand("copy");
+        showToast(`${label || 'Teks'} berhasil disalin!`);
+      } catch (err) {
+        showToast("Gagal menyalin teks.");
+      }
+      document.body.removeChild(tempInput);
+    }
+
+    function escapeHtml(str) {
+      if (!str) return '';
+      return String(str)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#039;');
+    }
+
+    // --- 5.4 VECTOR SVG LOGOS FOR BANKS & E-WALLETS ---
+    function getBankLogo(bankName) {
+      const b = (bankName || '').toLowerCase().trim();
+      if (b.includes('bca')) return 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Bank_Central_Asia.svg/960px-Bank_Central_Asia.svg.png';
+      if (b.includes('mandiri')) return 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Bank_Mandiri_logo_2016.svg/250px-Bank_Mandiri_logo_2016.svg.png';
+      if (b.includes('bni')) return 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/Bank_Negara_Indonesia_logo_%282004%29.svg/250px-Bank_Negara_Indonesia_logo_%282004%29.svg.png';
+      if (b.includes('bri')) return 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/BRI_2025.svg/960px-BRI_2025.svg.png';
+      if (b.includes('bsi') || b.includes('syariah indonesia')) return 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Bank_Syariah_Indonesia.svg/960px-Bank_Syariah_Indonesia.svg.png';
+      if (b.includes('dana')) return 'https://upload.wikimedia.org/wikipedia/commons/7/72/Logo_dana_blue.svg';
+      if (b.includes('gopay')) return 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/Logo_Gopay.svg/960px-Logo_Gopay.svg.png';
+      if (b.includes('ovo')) return 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/Logo_ovo_purple.svg/960px-Logo_ovo_purple.svg.png';
+      if (b.includes('shopee') || b.includes('spay')) return 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Shopee.svg/1024px-Shopee.svg.png';
+      if (b.includes('cimb') || b.includes('niaga')) return 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/CIMB_Niaga_logo.svg/800px-CIMB_Niaga_logo.svg.png';
+      if (b.includes('jago')) return 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Bank_Jago_logo.svg/1200px-Bank_Jago_logo.svg.png';
+      if (b.includes('permata')) return 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/PermataBank_logo.svg/1200px-PermataBank_logo.svg.png';
+      if (b.includes('jenius') || b.includes('btpn')) return 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Jenius-logo.png/640px-Jenius-logo.png';
+      if (b.includes('seabank')) return 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/SeaBank_logo.svg/1200px-SeaBank_logo.svg.png';
+      if (b.includes('muamalat')) return 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Bank_Muamalat_logo.svg/1200px-Bank_Muamalat_logo.svg.png';
+      return null;
+    }
+
+    // --- 5.5 LIGHTBOX HANDLERS ---
+    function openLightbox(index) {
+      if (!currentGalleryPhotos || currentGalleryPhotos.length === 0) return;
+      currentLightboxIndex = (index + currentGalleryPhotos.length) % currentGalleryPhotos.length;
+      const photo = currentGalleryPhotos[currentLightboxIndex];
+      const imgUrl = typeof photo === 'string' ? photo : (photo.url || photo.image);
+      const lightboxModal = document.getElementById('lightbox-modal');
+      const lightboxImg = document.getElementById('lightbox-img');
+      if (lightboxImg && lightboxModal) {
+        lightboxImg.src = imgUrl;
+        lightboxModal.classList.remove('hidden');
+        document.body.style.overflow = 'hidden';
+      }
+    }
+
+    function closeLightbox() {
+      const lightboxModal = document.getElementById('lightbox-modal');
+      if (lightboxModal) {
+        lightboxModal.classList.add('hidden');
+        document.body.style.overflow = '';
+      }
+    }
+
+    // --- 5.6 COUNTDOWN TIMER LOGIC ---
+    let countdownInterval = null;
+    function initCountdown(targetDate, targetTime) {
+      clearInterval(countdownInterval);
+      const timeStr = targetTime || "09:00";
+      const fullTargetString = `${targetDate}T${timeStr.length === 5 ? timeStr + ':00' : timeStr}`;
+      const targetTimeMs = new Date(fullTargetString).getTime();
+
+      function update() {
+        const now = Date.now();
+        const diff = targetTimeMs - now;
+
+        const cdDays = document.getElementById('cd-days');
+        const cdHours = document.getElementById('cd-hours');
+        const cdMin = document.getElementById('cd-minutes');
+        const cdSec = document.getElementById('cd-seconds');
+
+        if (diff <= 0) {
+          if (cdDays) cdDays.textContent = "00";
+          if (cdHours) cdHours.textContent = "00";
+          if (cdMin) cdMin.textContent = "00";
+          if (cdSec) cdSec.textContent = "00";
+          clearInterval(countdownInterval);
+          return;
+        }
+
+        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+        if (cdDays) cdDays.textContent = String(days).padStart(2, '0');
+        if (cdHours) cdHours.textContent = String(hours).padStart(2, '0');
+        if (cdMin) cdMin.textContent = String(minutes).padStart(2, '0');
+        if (cdSec) cdSec.textContent = String(seconds).padStart(2, '0');
+      }
+
+      update();
+      countdownInterval = setInterval(update, 1000);
+    }
+
+    // --- 5.7 YOUTUBE VIDEO PARSER ---
+    function renderVideo(url) {
+      const section = document.getElementById('video-section');
+      const iframe = document.getElementById('youtube-iframe');
+      if (!section || !iframe) return;
+
+      if (!url || typeof url !== 'string' || !url.trim() || url === '-' || url.toLowerCase() === 'none') {
+        section.classList.add('hidden');
+        iframe.src = '';
+        return;
+      }
+
+      let videoId = '';
+      const cleanUrl = url.trim();
+      if (cleanUrl.includes('youtube.com/watch')) {
+        const params = new URLSearchParams(cleanUrl.split('?')[1]);
+        videoId = params.get('v') || '';
+      } else if (cleanUrl.includes('youtu.be/')) {
+        videoId = cleanUrl.split('youtu.be/')[1]?.split(/[?#&]/)[0] || '';
+      } else if (cleanUrl.includes('youtube.com/embed/')) {
+        videoId = cleanUrl.split('youtube.com/embed/')[1]?.split(/[?#&]/)[0] || '';
+      } else if (cleanUrl.includes('youtube.com/shorts/')) {
+        videoId = cleanUrl.split('youtube.com/shorts/')[1]?.split(/[?#&]/)[0] || '';
+      } else if (/^[a-zA-Z0-9_-]{11}$/.test(cleanUrl)) {
+        videoId = cleanUrl;
+      }
+
+      if (videoId) {
+        iframe.src = `https://www.youtube.com/embed/${videoId}`;
+        section.classList.remove('hidden');
+      } else {
+        section.classList.add('hidden');
+        iframe.src = '';
+      }
+    }
+
+    // --- 5.8 APPLY CONFIG TO DOM ---
+    function applyConfig(cfg) {
+      if (!cfg) cfg = DEMO_CONFIG;
+
+      const groom = cfg.couple?.groom || DEMO_CONFIG.couple.groom;
+      const bride = cfg.couple?.bride || DEMO_CONFIG.couple.bride;
+
+      // 1. Couple Names & Nicknames
+      const groomNick = groom.name || "Julian";
+      const brideNick = bride.name || "Clara";
+      const groomFull = groom.fullname || "Julian Pratama, S.T.";
+      const brideFull = bride.fullname || "Clara Anindya, S.Ked";
+      const groomParents = groom.sonOf || `Putra dari Bpk. ${groom.father || '...'} & Ibu ${groom.mother || '...'}`;
+      const brideParents = bride.daughterOf || `Putri dari Bpk. ${bride.father || '...'} & Ibu ${bride.mother || '...'}`;
+
+      // Update titles and text
+      document.title = `The Wedding of ${groomNick} & ${brideNick} - Rustic Woods`;
+      document.getElementById('lock-groom-name').textContent = groomNick;
+      document.getElementById('lock-bride-name').textContent = brideNick;
+      document.querySelectorAll('.main-groom-nick').forEach(el => el.textContent = groomNick);
+      document.querySelectorAll('.main-bride-nick').forEach(el => el.textContent = brideNick);
+
+      // Hero Images
+      const coverImage = cfg.coverImage || DEMO_CONFIG.coverImage;
+      const heroCoupleImg = document.getElementById('hero-couple-img');
+      const lockBgImg = document.getElementById('lockscreen-bg-img');
+      if (heroCoupleImg) heroCoupleImg.src = coverImage;
+      if (lockBgImg) lockBgImg.src = coverImage;
+
+      // 2. Quotes
+      const quoteBody = typeof cfg.quotes === 'string' && cfg.quotes.trim() !== '' ? cfg.quotes : (cfg.quote?.translation || DEMO_CONFIG.quotes);
+      const quoteSource = cfg.quote?.source || "— QS. Ar-Rum: 21";
+      document.getElementById('quote-text').textContent = `"${quoteBody.replace(/^["“]|["”]$/g, '')}"`;
+      document.getElementById('quote-source').textContent = quoteSource;
+
+      // 3. Groom Card
+      document.getElementById('groom-fullname').textContent = groomFull;
+      document.getElementById('groom-parents').textContent = groomParents;
+      if (groom.image) document.getElementById('groom-img').src = groom.image;
+
+      // Groom Social Media (Strict Requirement: 100% hidden if empty)
+      const groomSocialCont = document.getElementById('groom-social-container');
+      const groomHasSocial = groom.instagram && groom.instagram.trim() !== '' && groom.instagram !== '-';
+      if (groomSocialCont) {
+        groomSocialCont.style.display = groomHasSocial ? 'block' : 'none';
+        if (groomHasSocial) {
+          const rawHandle = groom.instagram.trim().replace('@', '');
+          const groomIcon = groom.socialIcon || 'fa-brands fa-instagram';
+          document.getElementById('groom-social-icon').className = `${groomIcon} text-sm`;
+          document.getElementById('groom-ig-handle').textContent = `@${rawHandle}`;
+          
+          let socialUrl = groom.instagram;
+          if (!socialUrl.startsWith('http')) {
+            if (groomIcon.includes('tiktok')) socialUrl = `https://tiktok.com/@${rawHandle}`;
+            else if (groomIcon.includes('whatsapp')) socialUrl = `https://wa.me/${rawHandle}`;
+            else socialUrl = `https://instagram.com/${rawHandle}`;
+          }
+          document.getElementById('groom-instagram').href = socialUrl;
+        }
+      }
+
+      // 4. Bride Card
+      document.getElementById('bride-fullname').textContent = brideFull;
+      document.getElementById('bride-parents').textContent = brideParents;
+      if (bride.image) document.getElementById('bride-img').src = bride.image;
+
+      // Bride Social Media (Strict Requirement: 100% hidden if empty)
+      const brideSocialCont = document.getElementById('bride-social-container');
+      const brideHasSocial = bride.instagram && bride.instagram.trim() !== '' && bride.instagram !== '-';
+      if (brideSocialCont) {
+        brideSocialCont.style.display = brideHasSocial ? 'block' : 'none';
+        if (brideHasSocial) {
+          const rawHandle = bride.instagram.trim().replace('@', '');
+          const brideIcon = bride.socialIcon || 'fa-brands fa-instagram';
+          document.getElementById('bride-social-icon').className = `${brideIcon} text-sm`;
+          document.getElementById('bride-ig-handle').textContent = `@${rawHandle}`;
+          
+          let socialUrl = bride.instagram;
+          if (!socialUrl.startsWith('http')) {
+            if (brideIcon.includes('tiktok')) socialUrl = `https://tiktok.com/@${rawHandle}`;
+            else if (brideIcon.includes('whatsapp')) socialUrl = `https://wa.me/${rawHandle}`;
+            else socialUrl = `https://instagram.com/${rawHandle}`;
+          }
+          document.getElementById('bride-instagram').href = socialUrl;
+        }
+      }
+
+      // 5. Events List
+      const eventsList = Array.isArray(cfg.events) && cfg.events.length > 0 ? cfg.events : DEMO_CONFIG.events;
+      const eventsContainer = document.getElementById('events-container');
+      eventsContainer.innerHTML = '';
+
+      const firstEvent = eventsList[0] || {};
+      const firstEventDateFormatted = formatIndonesianDate(firstEvent.date || '2026-10-24');
+      document.getElementById('lock-event-date').textContent = `${firstEventDateFormatted} · ${firstEvent.location || 'Bandung'}`;
+      document.getElementById('hero-date').textContent = `${firstEventDateFormatted} · ${firstEvent.location || 'Bandung'}`;
+
+      eventsList.forEach((ev, idx) => {
+        const evDate = formatIndonesianDate(ev.date);
+        const startTime = ev.startTime || (ev.time ? ev.time.split(' - ')[0] : '08:00');
+        const endTime = ev.endTime || (ev.time && ev.time.includes(' - ') ? ev.time.split(' - ')[1].split(' ')[0] : 'Selesai');
+        const evTime = `${startTime} - ${endTime} ${endTime !== 'Selesai' && !endTime.includes('WIB') ? 'WIB' : ''}`;
+        const hasMaps = ev.mapsUrl && ev.mapsUrl.trim() !== '' && ev.mapsUrl !== '-';
+
+        // Calendar link
+        const calTitle = encodeURIComponent(`${ev.title || 'Pernikahan'} - ${groomNick} & ${brideNick}`);
+        const calLoc = encodeURIComponent(`${ev.location || ''}, ${ev.address || ''}`);
+        const calUrl = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${calTitle}&details=${encodeURIComponent(ev.title || 'Pernikahan')}&location=${calLoc}`;
+
+        const card = document.createElement('div');
+        card.className = "rustic-card p-6 sm:p-7 rounded-2xl text-center shadow-md relative";
+        card.innerHTML = `
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-rustic-cream border border-rustic-sand/80 text-[10px] uppercase tracking-wideVintage font-serif text-rustic-terracotta font-bold mb-3">
+            <i class="fa-solid fa-tree text-xs"></i>
+            <span>ACARA 0${idx + 1}</span>
+          </div>
+
+          <h4 class="text-xl sm:text-2xl font-serif font-bold text-rustic-bark mb-2">${escapeHtml(ev.title || 'Acara')}</h4>
+          <div class="w-10 h-[1.5px] bg-rustic-terracotta/40 mx-auto mb-4"></div>
+
+          <p class="text-sm font-serif font-semibold text-rustic-bark">${escapeHtml(evDate)}</p>
+          <p class="text-xs text-rustic-terracotta font-sans mt-0.5 font-medium"><i class="fa-regular fa-clock mr-1"></i> ${escapeHtml(evTime)}</p>
+
+          <div class="my-4 pt-3 border-t border-rustic-sand/60">
+            <h5 class="text-sm font-serif font-bold text-rustic-bark">${escapeHtml(ev.location || 'Tempat Acara')}</h5>
+            <p class="text-xs text-rustic-cinnamon mt-1 leading-relaxed font-sans max-w-xs mx-auto">${escapeHtml(ev.address || '')}</p>
+          </div>
+
+          <div class="flex flex-wrap items-center justify-center gap-2.5 mt-5">
+            ${hasMaps ? `
+              <a href="${escapeHtml(ev.mapsUrl)}" target="_blank" rel="noopener noreferrer" 
+                 class="inline-flex items-center gap-2 btn-wax-seal px-4 py-2 rounded-xl text-xs font-serif font-semibold cursor-pointer">
+                <i class="fa-solid fa-location-dot text-xs"></i>
+                <span>Buka Google Maps</span>
+              </a>
+            ` : ''}
+            <a href="${calUrl}" target="_blank" rel="noopener noreferrer" 
+               class="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-serif font-semibold bg-rustic-cream border border-rustic-sand text-rustic-bark hover:bg-rustic-sand/40 transition-colors cursor-pointer">
+              <i class="fa-regular fa-calendar-plus text-xs"></i>
+              <span>Simpan Tanggal</span>
+            </a>
+          </div>
+        `;
+        eventsContainer.appendChild(card);
+      });
+
+      // 6. Countdown Timer Target (Resepsi or first event)
+      const resepsiEvent = eventsList.find(e => (e.title || '').toLowerCase().includes('resepsi')) || eventsList[0];
+      const cdDate = resepsiEvent?.date || cfg.countdownDate || "2026-10-24";
+      const cdTime = resepsiEvent?.startTime || "11:00";
+      initCountdown(cdDate, cdTime);
+
+      // 7. Stories Section (conditionally rendered)
+      const storiesSection = document.getElementById('stories-section');
+      const storiesContainer = document.getElementById('stories-container');
+      const stories = Array.isArray(cfg.stories) ? cfg.stories : DEMO_CONFIG.stories;
+      if (stories && stories.length > 0) {
+        storiesSection.classList.remove('hidden');
+        storiesContainer.innerHTML = '';
+        stories.forEach((st, idx) => {
+          const item = document.createElement('div');
+          item.className = "relative pl-10 sm:pl-12";
+          item.innerHTML = `
+            <div class="absolute left-2.5 sm:left-4.5 -top-1 w-4 h-4 rounded-full bg-rustic-cream border-2 border-rustic-terracotta shadow-xs flex items-center justify-center">
+              <span class="w-1.5 h-1.5 rounded-full bg-rustic-terracotta"></span>
+            </div>
+            <div class="rustic-card p-4 sm:p-5 rounded-xl shadow-xs">
+              <span class="text-[10px] uppercase tracking-wideVintage font-serif text-rustic-terracotta font-bold block mb-1">
+                ${escapeHtml(st.year || st.date || `Bagian 0${idx + 1}`)}
+              </span>
+              <h5 class="text-sm font-serif font-bold text-rustic-bark">${escapeHtml(st.title || '')}</h5>
+              <p class="text-xs text-rustic-cinnamon mt-1 leading-relaxed font-sans">${escapeHtml(st.description || '')}</p>
+            </div>
+          `;
+          storiesContainer.appendChild(item);
+        });
+      } else {
+        storiesSection.classList.add('hidden');
+      }
+
+      // 8. Gallery Section (conditionally rendered)
+      const gallerySection = document.getElementById('gallery-section');
+      const galleryContainer = document.getElementById('gallery-container');
+      const gallery = Array.isArray(cfg.gallery) && cfg.gallery.length > 0 ? cfg.gallery : DEMO_CONFIG.gallery;
+      currentGalleryPhotos = gallery;
+
+      if (gallery && gallery.length > 0) {
+        gallerySection.classList.remove('hidden');
+        galleryContainer.innerHTML = '';
+        gallery.forEach((photo, idx) => {
+          const imgUrl = typeof photo === 'string' ? photo : (photo.url || photo.image);
+          const tile = document.createElement('div');
+          tile.className = "aspect-square rustic-polaroid p-1.5 sm:p-2 cursor-pointer group";
+          tile.onclick = () => openLightbox(idx);
+          tile.innerHTML = `
+            <div class="w-full h-full overflow-hidden rounded-xs bg-rustic-sand/30 relative">
+              <img src="${imgUrl}" alt="Foto Galeri ${idx + 1}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out" loading="lazy" />
+              <div class="absolute inset-0 bg-rustic-bark/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                <i class="fa-solid fa-expand text-white text-base"></i>
+              </div>
+            </div>
+          `;
+          galleryContainer.appendChild(tile);
+        });
+      } else {
+        gallerySection.classList.add('hidden');
+      }
+
+      // 9. Digital Gifts & Bank Accounts
+      const bankAccountsContainer = document.getElementById('bank-accounts-container');
+      bankAccountsContainer.innerHTML = '';
+      const giftsList = Array.isArray(cfg.gifts) && cfg.gifts.length > 0 ? cfg.gifts : (Array.isArray(cfg.banks) && cfg.banks.length > 0 ? cfg.banks : DEMO_CONFIG.gifts);
+
+      giftsList.forEach((b) => {
+        const bName = b.bank || b.bankName || 'Transfer Bank';
+        const bNumber = b.number || b.accountNumber || '-';
+        const bHolder = b.name || b.holder || b.accountName || b.accountHolder || '-';
+        const logo = b.logo || getBankLogo(bName);
+
+        const card = document.createElement('div');
+        card.className = "rustic-card p-5 sm:p-6 rounded-2xl text-center shadow-md";
+        card.innerHTML = `
+          <div class="flex items-center justify-between gap-3 mb-3 pb-3 border-b border-rustic-sand/60">
+            <span class="text-xs uppercase tracking-wideVintage font-serif text-rustic-bark font-bold">${escapeHtml(bName)}</span>
+            ${logo ? `
+              <div class="bg-white px-2.5 py-1 rounded-md border border-rustic-sand/50 shadow-xs flex items-center justify-center shrink-0">
+                <img src="${logo}" alt="${escapeHtml(bName)}" class="h-5 max-w-[80px] object-contain">
+              </div>
+            ` : `
+              <i class="fa-solid fa-credit-card text-rustic-terracotta text-sm"></i>
+            `}
+          </div>
+
+          <p class="text-xl sm:text-2xl font-serif font-bold text-rustic-bark tracking-wider select-all my-1.5">${escapeHtml(bNumber)}</p>
+          <p class="text-xs text-rustic-cinnamon font-sans">a.n. ${escapeHtml(bHolder)}</p>
+
+          <button type="button" onclick="window.copyTextToClipboard('${bNumber.replace(/'/g, "\\'")}', 'Nomor rekening ${escapeHtml(bName)}')"
+                  class="mt-4 inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-serif font-semibold bg-rustic-cream border border-rustic-sand text-rustic-bark hover:bg-rustic-sand/40 transition-colors cursor-pointer">
+            <i class="fa-regular fa-clone text-xs"></i>
+            <span>Salin Nomor Rekening</span>
+          </button>
+        `;
+        bankAccountsContainer.appendChild(card);
+      });
+
+      // Physical Gift Address
+      const giftAddrContainer = document.getElementById('gift-address-container');
+      const giftAddrText = document.getElementById('gift-address-text');
+      if (cfg.giftAddress && cfg.giftAddress.trim() !== '') {
+        giftAddrText.textContent = cfg.giftAddress;
+        giftAddrContainer.classList.remove('hidden');
+      } else {
+        giftAddrContainer.classList.add('hidden');
+      }
+
+      // 10. Background Music
+      const bgmAudio = document.getElementById('bgm-audio');
+      const musicSource = cfg.backgroundMusic || cfg.music || cfg.musicUrl || DEMO_CONFIG.backgroundMusic;
+      if (bgmAudio && musicSource) {
+        bgmAudio.src = musicSource;
+      }
+
+      // 11. Video
+      renderVideo(cfg.youtubeUrl || cfg.videoUrl);
+    }
+
+    // --- 5.9 RENDER WISHES LIST ---
+    function renderWishesList(wishes) {
+      const container = document.getElementById('wishes-list');
+      if (!container) return;
+      container.innerHTML = '';
+
+      const totalEl = document.getElementById('stat-total-wishes');
+      const attendEl = document.getElementById('stat-attending-wishes');
+
+      const items = Array.isArray(wishes) ? wishes : [];
+      if (totalEl) totalEl.textContent = items.length;
+      if (attendEl) attendEl.textContent = items.filter(w => (w.attendance || '').toLowerCase().includes('hadir') && !(w.attendance || '').toLowerCase().includes('tidak')).length;
+
+      if (items.length === 0) {
+        container.innerHTML = `
+          <div class="text-center p-6 rustic-card rounded-xl">
+            <p class="text-xs text-rustic-cinnamon font-serif italic">Belum ada ucapan doa. Jadilah yang pertama memberikan doa restu!</p>
+          </div>
+        `;
+        return;
+      }
+
+      items.forEach((w) => {
+        let attendanceBadge = '';
+        const att = (w.attendance || 'Hadir').toLowerCase();
+        if (att.includes('tidak')) {
+          attendanceBadge = `<span class="px-2 py-0.5 rounded-full text-[10px] font-sans font-medium bg-red-100 text-red-700">Tidak Hadir</span>`;
+        } else if (att.includes('ragu')) {
+          attendanceBadge = `<span class="px-2 py-0.5 rounded-full text-[10px] font-sans font-medium bg-amber-100 text-amber-800">Masih Ragu</span>`;
+        } else {
+          attendanceBadge = `<span class="px-2 py-0.5 rounded-full text-[10px] font-sans font-medium bg-emerald-100 text-emerald-800">Hadir</span>`;
+        }
+
+        let timeStr = 'Baru saja';
+        if (w.created_at) {
+          try {
+            const diffMs = Date.now() - new Date(w.created_at).getTime();
+            const diffHours = Math.floor(diffMs / (1000 * 60 * 60));
+            if (diffHours < 1) timeStr = 'Baru saja';
+            else if (diffHours < 24) timeStr = `${diffHours} jam lalu`;
+            else timeStr = `${Math.floor(diffHours / 24)} hari lalu`;
+          } catch (e) {
+            timeStr = w.created_at;
+          }
+        }
+
+        const item = document.createElement('div');
+        item.className = "rustic-card p-4 rounded-xl shadow-xs";
+        item.innerHTML = `
+          <div class="flex items-center justify-between mb-1.5">
+            <h5 class="text-xs font-serif font-bold text-rustic-bark">${escapeHtml(w.name || 'Tamu Undangan')}</h5>
+            ${attendanceBadge}
+          </div>
+          <p class="text-xs text-rustic-cinnamon font-sans leading-relaxed mb-1">${escapeHtml(w.message || '')}</p>
+          <span class="text-[9px] text-rustic-cinnamon/60 font-sans block">${timeStr}</span>
+        `;
+        container.appendChild(item);
+      });
+    }
+
+    // --- 5.10 APPLICATION INITIALIZATION ---
+    document.addEventListener("DOMContentLoaded", async () => {
+      // 1. Detect Guest Name & Slug from URL
+      const urlParams = new URLSearchParams(window.location.search);
+      const slug = urlParams.get('u') || window.FORCE_SLUG || 'demo';
+      const guestName = urlParams.get('to') || urlParams.get('kpd') || 'Tamu Undangan';
+
+      const lockGuestNameEl = document.getElementById('lock-guest-name');
+      const rsvpNameInput = document.getElementById('rsvp-name');
+      if (lockGuestNameEl) lockGuestNameEl.textContent = guestName;
+      if (rsvpNameInput) rsvpNameInput.value = guestName !== 'Tamu Undangan' ? guestName : '';
+
+      // 2. Supabase Setup
+      let supabaseClient = window.supabaseClient || (typeof supabase !== 'undefined' && window.SUPABASE_URL && window.SUPABASE_ANON_KEY ? supabase.createClient(window.SUPABASE_URL, window.SUPABASE_ANON_KEY) : null);
+
+      // 3. Fetch Invitation Data
+      let invitationData = null;
+      if (slug !== 'demo' && supabaseClient) {
+        try {
+          const { data, error } = await supabaseClient.from('invitations').select('config').eq('slug', slug).single();
+          if (!error && data && data.config) {
+            invitationData = data.config;
+          }
+        } catch (err) {
+          console.warn("Could not fetch invitation from Supabase:", err);
+        }
+      }
+
+      const initialConfig = invitationData || (typeof window.config !== 'undefined' && window.config ? window.config : DEMO_CONFIG);
+      applyConfig(initialConfig);
+
+      // 4. Fetch Wishes
+      async function loadWishes() {
+        if (supabaseClient && slug !== 'demo') {
+          try {
+            const { data, error } = await supabaseClient.from('wishes').select('*').eq('slug', slug).order('created_at', { ascending: false });
+            if (!error && data) {
+              renderWishesList(data);
+              return;
+            }
+          } catch (e) {
+            console.warn("Error fetching wishes:", e);
+          }
+        }
+        renderWishesList(localWishes);
+      }
+
+      await loadWishes();
+
+      // Realtime subscription if available
+      if (supabaseClient && slug !== 'demo') {
+        try {
+          supabaseClient.channel(`rustic-wishes-${slug}`)
+            .on('postgres_changes', { event: 'INSERT', schema: 'public', table: 'wishes', filter: `slug=eq.${slug}` }, (payload) => {
+              if (payload.new) {
+                loadWishes();
+                showToast(`Ucapan baru dari ${payload.new.name} telah masuk!`);
+              }
+            })
+            .subscribe();
+        } catch (e) {
+          console.warn("Realtime subscription init failed:", e);
+        }
+      }
+
+      // 5. Audio & Open Invitation Interactions
+      const bgmAudio = document.getElementById('bgm-audio');
+      const audioControlContainer = document.getElementById('audio-control-container');
+      const audioIcon = document.getElementById('audio-icon');
+      const floatingNav = document.getElementById('floating-nav');
+      const btnOpenInvitation = document.getElementById('btn-open-invitation');
+      const lockscreen = document.getElementById('lockscreen');
+
+      function toggleAudio() {
+        if (!bgmAudio) return;
+        if (isMusicPlaying) {
+          bgmAudio.pause();
+          isMusicPlaying = false;
+          audioIcon.classList.remove('animate-spin-slow');
+          audioIcon.className = 'fa-solid fa-play text-xs';
+          showToast("Musik dihentikan");
+        } else {
+          bgmAudio.play().then(() => {
+            isMusicPlaying = true;
+            audioIcon.classList.add('animate-spin-slow');
+            audioIcon.className = 'fa-solid fa-music text-xs animate-spin-slow';
+            showToast("Musik diputar");
+          }).catch(() => {
+            console.warn("Autoplay restriction on browser");
+          });
+        }
+      }
+
+      document.getElementById('btn-toggle-audio').addEventListener('click', toggleAudio);
+
+      // Open Invitation Handler
+      btnOpenInvitation.addEventListener('click', () => {
+        btnOpenInvitation.classList.add('scale-95', 'opacity-80');
+
+        setTimeout(() => {
+          document.body.classList.remove('is-locked');
+          document.body.classList.add('is-unlocked');
+          lockscreen.classList.add('unlocked');
+
+          // Reveal floating widgets
+          audioControlContainer.classList.remove('opacity-0', 'pointer-events-none');
+          floatingNav.classList.remove('opacity-0', 'pointer-events-none', 'translate-y-4');
+
+          // Start playing background music
+          if (bgmAudio) {
+            bgmAudio.play().then(() => {
+              isMusicPlaying = true;
+              audioIcon.classList.add('animate-spin-slow');
+              audioIcon.className = 'fa-solid fa-music text-xs animate-spin-slow';
+            }).catch((err) => {
+              console.log("Audio waiting for user gesture:", err);
+            });
+          }
+
+          // Complete cleanup of lockscreen after transition completes
+          setTimeout(() => {
+            lockscreen.style.display = 'none';
+          }, 1600);
+        }, 150);
+      });
+
+      // 6. Lightbox Event Handlers
+      document.getElementById('lightbox-close').addEventListener('click', closeLightbox);
+      document.getElementById('lightbox-prev').addEventListener('click', () => openLightbox(currentLightboxIndex - 1));
+      document.getElementById('lightbox-next').addEventListener('click', () => openLightbox(currentLightboxIndex + 1));
+      
+      document.getElementById('lightbox-modal').addEventListener('click', (e) => {
+        if (e.target.id === 'lightbox-modal') closeLightbox();
+      });
+
+      document.addEventListener('keydown', (e) => {
+        const modal = document.getElementById('lightbox-modal');
+        if (modal && !modal.classList.contains('hidden')) {
+          if (e.key === 'Escape') closeLightbox();
+          if (e.key === 'ArrowLeft') openLightbox(currentLightboxIndex - 1);
+          if (e.key === 'ArrowRight') openLightbox(currentLightboxIndex + 1);
+        }
+      });
+
+      // 7. RSVP Submission Handler
+      const rsvpForm = document.getElementById('rsvp-form');
+      rsvpForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const submitBtn = document.getElementById('btn-submit-rsvp');
+        const nameVal = document.getElementById('rsvp-name').value.trim();
+        const messageVal = document.getElementById('rsvp-message').value.trim();
+        const attendanceVal = document.querySelector('input[name="attendance"]:checked')?.value || 'Hadir';
+
+        if (!nameVal || !messageVal) {
+          showToast("Mohon lengkapi nama dan ucapan Anda.", "fa-circle-exclamation");
+          return;
+        }
+
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = `<i class="fa-solid fa-spinner fa-spin text-xs"></i><span>Mengirimkan...</span>`;
+
+        try {
+          if (supabaseClient && slug !== 'demo') {
+            const { error } = await supabaseClient.from('wishes').insert([
+              { slug: slug, name: nameVal, attendance: attendanceVal, message: messageVal }
+            ]);
+            if (error) throw error;
+          } else {
+            // Local fallback simulation
+            localWishes.unshift({
+              name: nameVal,
+              attendance: attendanceVal,
+              message: messageVal,
+              created_at: "Baru saja"
+            });
+            renderWishesList(localWishes);
+          }
+
+          showToast("Terima kasih! Doa dan konfirmasi telah terkirim.");
+          document.getElementById('rsvp-message').value = '';
+        } catch (err) {
+          console.error("Gagal mengirim RSVP:", err);
+          showToast("Gagal mengirim. Silakan coba lagi.", "fa-triangle-exclamation");
+        } finally {
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = `<i class="fa-regular fa-paper-plane text-xs"></i><span>KIRIM UCAPAN &amp; DOA</span>`;
+        }
+      });
+    });
+  </script>
+</body>
+</html>
