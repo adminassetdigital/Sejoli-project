@@ -156,35 +156,32 @@
 
       /* Dynamically scaled arch photo adapting fluidly to device height & width */
       .cover-arch-frame {
-        border-radius: 9999px 9999px 22px 22px;
+        border-radius: 9999px 9999px 24px 24px;
         box-shadow: 0 0 35px rgba(223, 190, 126, 0.35), inset 0 0 15px rgba(223, 190, 126, 0.2);
-        width: clamp(75px, 16vh, 130px);
-        height: clamp(95px, 21vh, 160px);
+        width: clamp(80px, 17vh, 124px);
+        height: clamp(104px, 22vh, 158px);
       }
       .cover-arch-outer {
-        border-radius: 9999px 9999px 26px 26px;
+        border-radius: 9999px 9999px 28px 28px;
       }
 
       /* Fluid couple name sizing that stays proportional to viewport */
       .cover-names-fluid {
-        font-size: clamp(1.75rem, 4.5vh, 2.75rem);
+        font-size: clamp(1.85rem, 4.6vh, 2.75rem);
         line-height: 1.15;
       }
 
-      /* Responsive rules for compact device heights (< 700px) */
-      @media (max-height: 700px) {
-        .cover-hide-on-short {
-          display: none !important;
-        }
-        .cover-compact-py {
-          padding-top: 0.35rem !important;
-          padding-bottom: 0.35rem !important;
+      /* Responsive rules for compact device heights (< 680px) */
+      @media (max-height: 680px) {
+        .cover-arch-frame {
+          width: 74px !important;
+          height: 94px !important;
         }
       }
-      @media (max-height: 600px) {
+      @media (max-height: 580px) {
         .cover-arch-frame {
-          width: 70px !important;
-          height: 88px !important;
+          width: 64px !important;
+          height: 80px !important;
         }
       }
       @keyframes goldShimmer {
@@ -374,7 +371,7 @@
     <!-- ============================================================== -->
     <div
       id="cover-lockscreen"
-      class="fixed inset-0 z-50 h-[100dvh] max-h-[100dvh] w-full flex flex-col justify-between items-center text-center px-4 sm:px-6 py-2.5 sm:py-5 bg-[#02130e] text-ivory-100 overflow-hidden select-none"
+      class="fixed inset-0 z-50 h-[100dvh] max-h-[100dvh] w-full flex items-center justify-center text-center px-4 sm:px-6 py-4 bg-[#02130e] text-ivory-100 overflow-hidden select-none"
     >
       <!-- Ambient Background Image & Cinematic Emerald Vignette -->
       <div class="absolute inset-0 z-0 pointer-events-none overflow-hidden">
@@ -438,15 +435,15 @@
         </svg>
       </div>
 
-      <!-- Inner Flex Column holding Top, Middle, Bottom with adaptive spacing -->
-      <div class="cover-inner-content relative z-10 w-full max-w-lg h-full flex flex-col justify-between items-center py-1 sm:py-2">
+      <!-- Center Stage Container: Harmoniously proportioned and optically centered -->
+      <div class="cover-inner-content relative z-10 w-full max-w-md mx-auto flex flex-col items-center justify-center my-auto py-1 sm:py-3">
 
         <!-- ============================================== -->
-        <!-- TOP: FLOURISH & ROYAL ARCH COUPLE PORTRAIT     -->
+        <!-- 1. TOP FLOURISH & ROYAL ARCH COUPLE PORTRAIT   -->
         <!-- ============================================== -->
-        <div class="flex-shrink-0 w-full flex flex-col items-center pt-1 animate-float-gentle">
-          <!-- Subtitle Pill with Imperial Crown -->
-          <div class="inline-flex items-center gap-1.5 sm:gap-2 px-3 py-1 sm:px-4 sm:py-1.5 rounded-full bg-emerald-950/75 border border-gold-400/40 text-gold-300 text-[10px] sm:text-xs tracking-[0.25em] uppercase font-semibold mb-1 sm:mb-2 backdrop-blur-md shadow-lg">
+        <div class="flex flex-col items-center animate-float-gentle">
+          <!-- Imperial Subheading Pill -->
+          <div class="inline-flex items-center gap-1.5 sm:gap-2 px-3 py-1 sm:px-4 sm:py-1 rounded-full bg-emerald-950/80 border border-gold-400/40 text-gold-300 text-[9.5px] sm:text-xs tracking-[0.25em] uppercase font-semibold mb-2 sm:mb-2.5 backdrop-blur-md shadow-md">
             <i class="fa-solid fa-crown text-[9px] text-gold-400"></i>
             <span id="cover-subheading">Walimatul 'Ursy</span>
             <i class="fa-solid fa-crown text-[9px] text-gold-400"></i>
@@ -474,22 +471,22 @@
             </div>
 
             <!-- Little Imperial Seal / Gem Beneath Photo -->
-            <div class="absolute -bottom-2 left-1/2 -translate-x-1/2 w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-emerald-950 border border-gold-400 flex items-center justify-center text-gold-300 text-[9px] sm:text-[10px] shadow-md">
+            <div class="absolute -bottom-2.5 left-1/2 -translate-x-1/2 w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-emerald-950 border border-gold-400 flex items-center justify-center text-gold-300 text-[9px] sm:text-[10px] shadow-md z-10">
               <i class="fa-solid fa-gem"></i>
             </div>
           </div>
 
           <!-- Grand Couple Names in Shimmering Gold Typography -->
-          <div class="py-0.5 mt-1 overflow-visible">
+          <div class="mt-2.5 sm:mt-3 overflow-visible">
             <h1 class="font-script-clip-safe font-serif cover-names-fluid font-normal tracking-wide drop-shadow-[0_4px_16px_rgba(0,0,0,0.85)]">
               <span id="cover-groom-name" class="gold-gradient-text">Soren</span>
-              <span class="font-script text-2xl sm:text-4xl text-gold-300 px-1">&amp;</span>
+              <span class="font-script text-2xl sm:text-4xl text-gold-300 px-1.5 sm:px-2">&amp;</span>
               <span id="cover-bride-name" class="gold-gradient-text">Freya</span>
             </h1>
           </div>
 
           <!-- Royal Divider with Lotus Diamond Ornament -->
-          <div class="flex items-center justify-center gap-2.5 mt-0.5 text-gold-400">
+          <div class="flex items-center justify-center gap-2.5 mt-1 sm:mt-1.5 text-gold-400">
             <span class="h-px w-10 sm:w-14 bg-gradient-to-r from-transparent via-gold-400 to-gold-500"></span>
             <i class="fa-solid fa-crown text-[10px] text-gold-400"></i>
             <span class="h-px w-10 sm:w-14 bg-gradient-to-l from-transparent via-gold-400 to-gold-500"></span>
@@ -497,61 +494,44 @@
         </div>
 
         <!-- ============================================== -->
-        <!-- MIDDLE: ROYAL GUEST INVITATION DECREE CARD     -->
+        <!-- 2. ROYAL GUEST DECREE PLAQUE (PROPORTIONAL)    -->
         <!-- ============================================== -->
-        <div class="flex-1 min-h-0 flex flex-col justify-center items-center w-full max-w-sm sm:max-w-md my-auto px-1 py-1 sm:py-2">
-          <div class="w-full backdrop-blur-xl bg-gradient-to-b from-emerald-950/85 via-[#062c22]/80 to-emerald-950/90 border border-gold-400/40 rounded-2xl sm:rounded-3xl p-3 sm:p-5 md:p-6 shadow-[0_16px_40px_rgba(0,0,0,0.7),inset_0_1px_1px_rgba(255,255,255,0.15)] relative overflow-hidden">
+        <div class="w-full max-w-[310px] sm:max-w-[360px] mt-3.5 sm:mt-5 mb-3 sm:mb-4 px-2">
+          <div class="backdrop-blur-xl bg-gradient-to-b from-emerald-950/90 via-[#062c22]/85 to-emerald-950/90 border border-gold-400/40 rounded-2xl sm:rounded-3xl px-4 py-3 sm:px-6 sm:py-4 shadow-[0_16px_40px_rgba(0,0,0,0.7),inset_0_1px_1px_rgba(255,255,255,0.15)] relative overflow-hidden">
             
             <!-- Elegant Gold Corner Accents -->
-            <div class="absolute top-2 left-2 w-3 h-3 border-t border-l border-gold-400"></div>
-            <div class="absolute top-2 right-2 w-3 h-3 border-t border-r border-gold-400"></div>
-            <div class="absolute bottom-2 left-2 w-3 h-3 border-b border-l border-gold-400"></div>
-            <div class="absolute bottom-2 right-2 w-3 h-3 border-b border-r border-gold-400"></div>
+            <div class="absolute top-2 left-2 w-3 h-3 border-t border-l border-gold-400/80"></div>
+            <div class="absolute top-2 right-2 w-3 h-3 border-t border-r border-gold-400/80"></div>
+            <div class="absolute bottom-2 left-2 w-3 h-3 border-b border-l border-gold-400/80"></div>
+            <div class="absolute bottom-2 right-2 w-3 h-3 border-b border-r border-gold-400/80"></div>
 
-            <!-- Top Gold Decree Ribbon -->
-            <div class="flex items-center justify-center gap-2 mb-1 sm:mb-1.5">
-              <span class="h-px w-5 sm:w-6 bg-gold-400/40"></span>
-              <span class="text-[8.5px] sm:text-[10px] tracking-[0.25em] uppercase font-semibold text-gold-300">
-                Undangan Kehormatan
-              </span>
-              <span class="h-px w-5 sm:w-6 bg-gold-400/40"></span>
-            </div>
-
-            <p class="text-[10px] sm:text-[11px] uppercase tracking-widest text-gold-200/80 mb-1 font-light">
+            <p class="text-[9.5px] sm:text-[10.5px] uppercase tracking-[0.2em] text-gold-200/85 font-medium mb-1">
               Kepada Yth. Bapak/Ibu/Saudara/i:
             </p>
 
             <!-- Guest Name Box with Gold Frame & Soft Glass Glow -->
-            <div class="my-1 sm:my-2 py-1.5 sm:py-2.5 px-3 sm:px-4 rounded-xl sm:rounded-2xl bg-black/45 border border-gold-400/35 shadow-[inset_0_2px_4px_rgba(0,0,0,0.6)]">
-              <div id="guest-name-cover" class="font-serif text-lg sm:text-2xl md:text-3xl font-bold text-gold-100 py-0.5 break-words tracking-wide leading-tight">
+            <div class="my-1.5 py-1.5 sm:py-2 px-3 sm:px-4 rounded-xl bg-black/45 border border-gold-400/35 shadow-[inset_0_2px_4px_rgba(0,0,0,0.6)]">
+              <div id="guest-name-cover" class="font-serif text-lg sm:text-2xl font-bold text-gold-100 py-0.5 break-words tracking-wide leading-tight">
                 Tamu Undangan
               </div>
             </div>
 
             <!-- Wedding Date Pill Badge -->
-            <div class="inline-flex items-center gap-1.5 px-2.5 py-0.5 sm:px-3 sm:py-1 rounded-full bg-emerald-950/70 border border-gold-400/30 text-gold-300 text-[10px] sm:text-xs my-0.5 sm:my-1.5">
+            <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-950/80 border border-gold-400/30 text-gold-300 text-[10px] sm:text-xs mt-1">
               <i class="fa-regular fa-calendar-check text-gold-400 text-[10px]"></i>
               <span id="cover-date-text">Sabtu, 12 Desember 2026</span>
             </div>
-
-            <p class="text-[10px] sm:text-xs text-ivory-200/80 mt-0.5 sm:mt-1 leading-snug sm:leading-relaxed italic font-serif">
-              Tanpa mengurangi rasa hormat, kami bermaksud mengundang Anda untuk hadir dalam momen suci pernikahan kami.
-            </p>
-
-            <p class="text-[8.5px] sm:text-[9.5px] text-gold-300/60 mt-1 font-sans tracking-wide cover-hide-on-short">
-              *Mohon maaf apabila ada kesalahan penulisan nama/gelar
-            </p>
           </div>
         </div>
 
         <!-- ============================================== -->
-        <!-- BOTTOM: OPEN INVITATION BUTTON WITH SHIMMER    -->
+        <!-- 3. OPEN INVITATION BUTTON (PROPORTIONAL CTA)   -->
         <!-- ============================================== -->
-        <div class="flex-shrink-0 w-full max-w-xs sm:max-w-sm pt-1 pb-1 sm:pb-3 flex flex-col items-center">
+        <div class="w-full max-w-xs flex flex-col items-center mt-1 sm:mt-2">
           <button
             id="btn-open-invitation"
             type="button"
-            class="group relative w-full max-w-[260px] sm:max-w-xs mx-auto py-2.5 sm:py-3.5 px-6 sm:px-7 rounded-full gold-gradient-bg text-emerald-950 font-bold text-xs sm:text-sm tracking-widest uppercase shadow-[0_10px_25px_rgba(223,190,126,0.45)] flex items-center justify-center gap-2.5 sm:gap-3 animate-pulse-glow hover:brightness-110 active:scale-95 transition-all duration-300 cursor-pointer overflow-hidden border border-gold-200/60"
+            class="group relative w-full max-w-[250px] sm:max-w-[280px] py-3 sm:py-3.5 px-6 sm:px-8 rounded-full gold-gradient-bg text-emerald-950 font-bold text-xs sm:text-sm tracking-widest uppercase shadow-[0_12px_28px_rgba(223,190,126,0.45)] flex items-center justify-center gap-2.5 sm:gap-3 animate-pulse-glow hover:brightness-110 active:scale-95 transition-all duration-300 cursor-pointer overflow-hidden border border-gold-200/70"
           >
             <!-- Shimmer Sweep Effect -->
             <div class="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 bg-gradient-to-r from-transparent via-white/45 to-transparent pointer-events-none"></div>
@@ -562,7 +542,7 @@
             <span class="font-serif tracking-wider font-bold">Buka Undangan</span>
           </button>
 
-          <p class="text-[9px] sm:text-[10px] text-gold-300/70 tracking-widest uppercase mt-1.5 sm:mt-2 font-light">
+          <p class="text-[9.5px] sm:text-[10px] text-gold-300/70 tracking-widest uppercase mt-2 sm:mt-2.5 font-light">
             Sentuh untuk membuka undangan &amp; memutar musik
           </p>
         </div>
