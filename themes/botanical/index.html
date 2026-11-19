@@ -267,7 +267,7 @@
 
     <!-- Audio Element -->
     <audio id="bg-music" loop preload="auto">
-        <source src="https://assets.mixkit.co/music/preview/mixkit-beautiful-dream-493.mp3" type="audio/mpeg">
+        <source src="https://www.dropbox.com/scl/fi/pbtl6lwtv07kxgmdd0gnu/music.mp3?rlkey=u1xr764r3lumkbdl5ds2zt2ex&st=8f6aeui9&raw=1" type="audio/mpeg">
     </audio>
     <div id="floating-audio-container" class="fixed bottom-6 right-6 z-40">
         <button id="audio-btn" onclick="togglePlay()" class="bg-white text-botanical-sage border border-botanical-sage/30 w-12 h-12 rounded-full flex items-center justify-center shadow-lg hidden transition-colors cursor-pointer" title="Putar / Hentikan Musik">
@@ -752,7 +752,7 @@
                         image: "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=600&q=80"
                     }
                 ],
-                music: "https://assets.mixkit.co/music/preview/mixkit-beautiful-dream-493.mp3",
+                music: "https://www.dropbox.com/scl/fi/pbtl6lwtv07kxgmdd0gnu/music.mp3?rlkey=u1xr764r3lumkbdl5ds2zt2ex&st=8f6aeui9&raw=1",
                 youtubeUrl: "https://www.youtube.com/watch?v=kY3gu5qD2_4"
             };
         }
@@ -925,8 +925,9 @@
             renderGifts(cfg.gifts || []);
 
             // Background Music
-            const musicSrc = cfg.music || cfg.backgroundMusic || "https://assets.mixkit.co/music/preview/mixkit-beautiful-dream-493.mp3";
+            const musicSrc = cfg.music || cfg.backgroundMusic || "https://www.dropbox.com/scl/fi/pbtl6lwtv07kxgmdd0gnu/music.mp3?rlkey=u1xr764r3lumkbdl5ds2zt2ex&st=8f6aeui9&raw=1";
             audio.src = musicSrc;
+            audio.load();
         }
 
         // --- Render Events ---

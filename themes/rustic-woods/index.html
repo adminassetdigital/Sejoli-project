@@ -215,7 +215,9 @@
 
 <body class="is-locked selection:bg-rustic-terracotta selection:text-white">
   <!-- Audio Element -->
-  <audio id="bgm-audio" loop preload="auto"></audio>
+  <audio id="bgm-audio" loop preload="auto">
+    <source src="https://www.dropbox.com/scl/fi/pbtl6lwtv07kxgmdd0gnu/music.mp3?rlkey=u1xr764r3lumkbdl5ds2zt2ex&st=8f6aeui9&raw=1" type="audio/mpeg" />
+  </audio>
 
   <!-- Toast Notification -->
   <div id="toast-notification" class="fixed top-5 left-1/2 -translate-x-1/2 z-[100000] opacity-0 pointer-events-none -translate-y-5 px-5 py-3 rounded-full bg-rustic-bark/95 text-rustic-cream border border-rustic-gold/50 shadow-2xl flex items-center gap-3 text-xs tracking-wider font-medium max-w-[90vw]">
@@ -726,7 +728,7 @@
       theme: "rustic-woods",
       coverImage: "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&q=80",
       ogImage: "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&q=80",
-      backgroundMusic: "https://assets.mixkit.co/music/preview/mixkit-romantic-wedding-harp-and-strings-1002.mp3",
+      backgroundMusic: "https://www.dropbox.com/scl/fi/pbtl6lwtv07kxgmdd0gnu/music.mp3?rlkey=u1xr764r3lumkbdl5ds2zt2ex&st=8f6aeui9&raw=1",
       quotes: "Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia menciptakan pasangan-pasangan untukmu dari jenismu sendiri, agar kamu cenderung dan merasa tenteram kepadanya, dan Dia menjadikan di antaramu rasa kasih dan sayang. Sungguh, pada yang demikian itu benar-benar terdapat tanda-tanda bagi kaum yang berpikir.",
       quote: {
         source: "— QS. Ar-Rum: 21",
@@ -1292,6 +1294,7 @@
       const musicSource = cfg.backgroundMusic || cfg.music || cfg.musicUrl || DEMO_CONFIG.backgroundMusic;
       if (bgmAudio && musicSource) {
         bgmAudio.src = musicSource;
+        bgmAudio.load();
       }
 
       // 11. Video

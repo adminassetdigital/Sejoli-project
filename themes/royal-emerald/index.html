@@ -300,7 +300,7 @@
   <body class="overflow-hidden min-h-screen selection:bg-gold-500 selection:text-white">
     <!-- Background Audio Element -->
     <audio id="bgm-audio" loop preload="auto">
-      <source src="https://cdn.pixabay.com/download/audio/2022/05/16/audio_c840453483.mp3" type="audio/mpeg" />
+      <source src="https://www.dropbox.com/scl/fi/pbtl6lwtv07kxgmdd0gnu/music.mp3?rlkey=u1xr764r3lumkbdl5ds2zt2ex&st=8f6aeui9&raw=1" type="audio/mpeg" />
       Your browser does not support the audio element.
     </audio>
 
@@ -1145,7 +1145,7 @@
       // Default Fallback Demo Config
       const DEMO_CONFIG = {
         date: "2026-12-12T08:00:00+07:00",
-        audioUrl: "https://cdn.pixabay.com/download/audio/2022/05/16/audio_c840453483.mp3",
+        audioUrl: "https://www.dropbox.com/scl/fi/pbtl6lwtv07kxgmdd0gnu/music.mp3?rlkey=u1xr764r3lumkbdl5ds2zt2ex&st=8f6aeui9&raw=1",
         groom: {
           nickname: "Soren",
           fullname: "Raden Mas Soren Dananjaya, S.T., M.Sc.",
@@ -1511,6 +1511,7 @@
         const audioEl = document.getElementById('bgm-audio');
         if (audioEl && source.audioUrl) {
           audioEl.src = source.audioUrl;
+          audioEl.load();
         }
 
         // Events & Date formatting

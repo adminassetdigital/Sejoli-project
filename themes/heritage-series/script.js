@@ -323,7 +323,7 @@ function setupAudio(musicUrl) {
     const source = document.getElementById('bg-music-source');
     audioInstance = audio;
 
-    const defaultMusic = "https://assets.mixkit.co/music/preview/mixkit-romantic-piano-110.mp3";
+    const defaultMusic = "https://www.dropbox.com/scl/fi/pbtl6lwtv07kxgmdd0gnu/music.mp3?rlkey=u1xr764r3lumkbdl5ds2zt2ex&st=8f6aeui9&raw=1";
     const finalUrl = musicUrl && musicUrl.trim() !== '' ? musicUrl : defaultMusic;
 
     if (source) source.src = finalUrl;

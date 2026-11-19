@@ -279,7 +279,7 @@ async function initApp(slug) {
         const audio = document.getElementById('background-music');
         if (audio) {
             // Gunakan link musik instrumen yang lebih stabil sebagai cadangan
-            const defaultMusic = "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3";
+            const defaultMusic = "https://www.dropbox.com/scl/fi/pbtl6lwtv07kxgmdd0gnu/music.mp3?rlkey=u1xr764r3lumkbdl5ds2zt2ex&st=8f6aeui9&raw=1";
             audio.src = (config.backgroundMusic && config.backgroundMusic.trim() !== '') ? config.backgroundMusic : defaultMusic;
             audio.volume = 1.0;
             audio.load();
