@@ -386,11 +386,9 @@
                             <span id="hero-bride-name">Freya</span>
                         </h2>
 
-                        <!-- Unboxed Metadata Line -->
-                        <div class="mt-4 flex flex-wrap items-center justify-center lg:justify-start gap-2.5 text-xs sm:text-sm text-amberGold-200/90 tracking-wider uppercase font-medium">
+                        <!-- Unboxed Wedding Date -->
+                        <div class="mt-4 flex flex-wrap items-center justify-center lg:justify-start text-xs sm:text-sm text-amberGold-200/90 tracking-wider uppercase font-medium">
                             <span id="hero-wedding-date">Sabtu, 24 Oktober 2026</span>
-                            <span aria-hidden="true" class="text-amberGold-400">·</span>
-                            <span id="hero-city-display">Bali, Indonesia</span>
                         </div>
 
                         <p class="mt-5 text-sm sm:text-base text-amberGold-100/80 max-w-xl mx-auto lg:mx-0 leading-relaxed">
@@ -1309,12 +1307,6 @@
                 if (config.weddingDateText) {
                     safeSetText('cover-wedding-date', config.weddingDateText.toUpperCase());
                     safeSetText('hero-wedding-date', config.weddingDateText);
-                }
-
-                if (config.events && config.events[0] && config.events[0].venue) {
-                    const cityParts = config.events[0].address ? config.events[0].address.split(',') : [];
-                    const city = cityParts.length ? cityParts[cityParts.length - 1].trim() : config.events[0].venue;
-                    safeSetText('hero-city-display', city);
                 }
 
                 safeSetText('groom-nickname', config.groom.nickname);
