@@ -589,13 +589,9 @@
             </h1>
           </div>
 
-          <!-- Date & Location Subtitle -->
-          <div class="flex items-center justify-center gap-2.5 text-xs sm:text-sm tracking-wider text-gold-200 mt-2 mb-8">
-            <span id="hero-day-display" class="font-medium">Sabtu</span>
-            <span>·</span>
-            <span id="hero-date-display" class="font-medium">12 Desember 2026</span>
-            <span>·</span>
-            <span id="hero-city-display" class="font-medium">Jakarta</span>
+          <!-- Event Date Subtitle -->
+          <div class="flex items-center justify-center text-xs sm:text-sm tracking-wider text-gold-200 mt-2 mb-8">
+            <span id="hero-date-display" class="font-medium">Sabtu, 12 Desember 2026</span>
           </div>
 
           <!-- Countdown Timer Card -->
@@ -1519,10 +1515,6 @@
           const firstEv = source.events[0];
           safeSetText('cover-date-text', firstEv.dayDate);
           safeSetText('hero-date-display', firstEv.dayDate);
-          if (firstEv.venue) {
-            const cityParts = firstEv.venue.split(',');
-            safeSetText('hero-city-display', cityParts[cityParts.length - 1].trim() || 'Jakarta');
-          }
 
           // Dynamic Calendar link
           const btnCal = document.getElementById('btn-calendar');
